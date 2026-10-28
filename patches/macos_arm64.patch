@@ -1,0 +1,668 @@
+diff --git a/ps2xRuntime/src/lib/Kernel/Syscalls/Dispatcher.cpp b/ps2xRuntime/src/lib/Kernel/Syscalls/Dispatcher.cpp
+index 3b2be31..7ba0b72 100644
+--- a/ps2xRuntime/src/lib/Kernel/Syscalls/Dispatcher.cpp
++++ b/ps2xRuntime/src/lib/Kernel/Syscalls/Dispatcher.cpp
+@@ -292,6 +292,10 @@ namespace ps2_syscalls
+         case static_cast<uint32_t>(-0x78):
+             ps2_stubs::sceSifSetDChain(rdram, ctx, runtime);
+             return true;
++        case 0x7E:
++            // MachineType: returns 0 for retail PS2 console
++            setReturnS32(ctx, 0);
++            return true;
+         case 0x7F:
+             GetMemorySize(rdram, ctx, runtime);
+             return true;
+diff --git a/ps2xRuntime/src/lib/ps2_pad.cpp b/ps2xRuntime/src/lib/ps2_pad.cpp
+index 8590f14..77b8f27 100644
+--- a/ps2xRuntime/src/lib/ps2_pad.cpp
++++ b/ps2xRuntime/src/lib/ps2_pad.cpp
+@@ -1,3 +1,5 @@
++#include <cstdio>
++#include <cstdlib>
+ #include "runtime/ps2_pad.h"
+ #include "ps2_host_backend.h"
+ #include <cstring>
+@@ -38,8 +40,22 @@ bool PSPadBackend::readState(int /*port*/, int /*slot*/, uint8_t *data, size_t s
+     data[4] = data[5] = data[6] = data[7] = kPadStickCenter;
+ 
+     uint16_t btns = 0xFFFFu;
+-    constexpr int kGamepad = 0;
+-    const bool useGamepad = IsGamepadAvailable(kGamepad);
++    // Use the first connected gamepad (slot 0 may hold a non-controller device on Linux), and
++    // always read the keyboard too: a connected gamepad must not disable keyboard input.
++    int kGamepad = -1;
++    for (int i = 0; i < 4 && kGamepad < 0; ++i)
++        if (IsGamepadAvailable(i))
++            kGamepad = i;
++    const bool useGamepad = kGamepad >= 0;
++    static bool s_loggedDevices = false;
++    if (!s_loggedDevices)
++    {
++        s_loggedDevices = true;
++        for (int i = 0; i < 4; ++i)
++            if (IsGamepadAvailable(i))
++                std::fprintf(stderr, "[pad] gamepad %d: %s%s\n", i, GetGamepadName(i), i == kGamepad ? " (used)" : "");
++        std::fprintf(stderr, "[pad] keyboard input enabled\n");
++    }
+     auto clearBit = [&btns](uint16_t mask)
+     { btns &= ~mask; };
+ 
+@@ -87,7 +103,6 @@ bool PSPadBackend::readState(int /*port*/, int /*slot*/, uint8_t *data, size_t s
+         data[4] = static_cast<uint8_t>(128 + rx * 127);
+         data[5] = static_cast<uint8_t>(128 + ry * 127);
+     }
+-    else
+     {
+         if (IsKeyDown(KEY_UP) || IsKeyDown(KEY_W))
+             clearBit(PAD_UP);
+@@ -119,6 +134,23 @@ bool PSPadBackend::readState(int /*port*/, int /*slot*/, uint8_t *data, size_t s
+             clearBit(PAD_SELECT);
+     }
+ 
++    static const char *s_autoInput = std::getenv("PS2X_AUTO_INPUT");
++    if (s_autoInput)
++    {
++        static uint64_t s_padTicks = 0;
++        ++s_padTicks;
++        // Pulse Circle and Start every 60 ticks starting from tick 120
++        if (s_padTicks >= 120)
++        {
++            uint64_t phase = s_padTicks % 60;
++            if (phase < 15)
++            {
++                clearBit(PAD_CIRCLE);
++                clearBit(PAD_START);
++            }
++        }
++    }
++
+     data[2] = static_cast<uint8_t>(btns & 0xFF);
+     data[3] = static_cast<uint8_t>(btns >> 8);
+     return true;
+diff --git a/ps2xRuntime/src/lib/ps2_runtime.cpp b/ps2xRuntime/src/lib/ps2_runtime.cpp
+index 45cb9d2..a02760f 100644
+--- a/ps2xRuntime/src/lib/ps2_runtime.cpp
++++ b/ps2xRuntime/src/lib/ps2_runtime.cpp
+@@ -1,3 +1,13 @@
++#if defined(__linux__)
++#include <sys/prctl.h>
++#include <ucontext.h>
++#elif defined(__APPLE__)
++#include <sys/ucontext.h>
++#include <pthread.h>
++#endif
++#include <dlfcn.h>
++#include <sys/time.h>
++#include <csignal>
+ #include "ps2_runtime.h"
+ #include "ps2_log.h"
+ #include "ps2_stubs.h"
+@@ -25,6 +35,8 @@
+ #include <atomic>
+ #include <thread>
+ #include <unordered_map>
++#include <unordered_set>
++#include <shared_mutex>
+ #include <sstream>
+ 
+ namespace ps2_stubs
+@@ -477,6 +489,177 @@ static void UploadFrame(Texture2D &tex, PS2Runtime *rt, uint32_t &outWidth, uint
+     s_hasUploadedFrame = true;
+ }
+ 
++static uint32_t parseWatchField(const char *env, bool second)
++{
++    if (!env)
++        return 0u;
++    const char *colon = std::strchr(env, ':');
++    if (second)
++        return colon ? static_cast<uint32_t>(std::strtoul(colon + 1, nullptr, 16)) : 16u;
++    return static_cast<uint32_t>(std::strtoul(env, nullptr, 16)) & PS2_RAM_MASK;
++}
++uint32_t g_ps2WatchLo = parseWatchField(std::getenv("PS2X_WATCH"), false);
++uint32_t g_ps2WatchLen = std::getenv("PS2X_WATCH") ? parseWatchField(std::getenv("PS2X_WATCH"), true) : 0u;
++bool g_ps2WatchValueOn = std::getenv("PS2X_WATCH_VALUE") != nullptr;
++uint32_t g_ps2WatchValue = g_ps2WatchValueOn ? static_cast<uint32_t>(std::strtoul(std::getenv("PS2X_WATCH_VALUE"), nullptr, 16)) : 0u;
++
++bool g_ps2TraceFloat = std::getenv("PS2X_TRACE_FLOAT") != nullptr;
++
++// PS2X_PROFILE=<file>: SIGPROF sampler. Every 1 ms of process CPU time the interrupted RIP is
++// counted; every 15 s the histogram (rip offsets from the executable's load base) is rewritten
++// to <file>. Resolve offline against `nm -C ps2EntryRunner`.
++namespace
++{
++    constexpr size_t kProfSlots = 1u << 20;
++    std::atomic<uint64_t> g_profRip[kProfSlots];
++    std::atomic<uint32_t> g_profCount[kProfSlots];
++
++    void profSignal(int, siginfo_t *, void *uctx)
++    {
++        // PS2X_PROFILE_THREAD=<name>: only sample threads with that name (e.g. GameThread).
++        static const char *only = std::getenv("PS2X_PROFILE_THREAD");
++        if (only)
++        {
++            char name[16] = {};
++#if defined(__linux__)
++            prctl(PR_GET_NAME, name, 0, 0, 0);
++#elif defined(__APPLE__)
++            pthread_getname_np(pthread_self(), name, sizeof(name));
++#endif
++            if (std::strncmp(name, only, 15) != 0)
++                return;
++        }
++#if defined(__linux__) && defined(REG_RIP)
++        const uint64_t rip = static_cast<uint64_t>(static_cast<ucontext_t *>(uctx)->uc_mcontext.gregs[REG_RIP]);
++#elif defined(__APPLE__) && defined(__aarch64__)
++        const uint64_t rip = static_cast<uint64_t>(static_cast<ucontext_t *>(uctx)->uc_mcontext->__ss.__pc);
++#elif defined(__APPLE__) && defined(__x86_64__)
++        const uint64_t rip = static_cast<uint64_t>(static_cast<ucontext_t *>(uctx)->uc_mcontext->__ss.__rip);
++#else
++        const uint64_t rip = 0;
++#endif
++        size_t slot = (rip * 0x9E3779B97F4A7C15ull) >> 44;
++        for (int probe = 0; probe < 32; ++probe, slot = (slot + 1) & (kProfSlots - 1))
++        {
++            uint64_t expected = 0;
++            if (g_profRip[slot].load(std::memory_order_relaxed) == rip ||
++                g_profRip[slot].compare_exchange_strong(expected, rip, std::memory_order_relaxed))
++            {
++                g_profCount[slot].fetch_add(1, std::memory_order_relaxed);
++                return;
++            }
++        }
++    }
++
++    const bool g_profStarted = []()
++    {
++        const char *path = std::getenv("PS2X_PROFILE");
++        if (!path)
++            return false;
++        struct sigaction sa{};
++        sa.sa_sigaction = profSignal;
++        sa.sa_flags = SA_SIGINFO | SA_RESTART;
++        sigaction(SIGPROF, &sa, nullptr);
++        itimerval tv{{0, 1000}, {0, 1000}};
++        setitimer(ITIMER_PROF, &tv, nullptr);
++        std::thread([out = std::string(path)]()
++                    {
++            Dl_info info{};
++            dladdr(reinterpret_cast<void *>(&profSignal), &info);
++            const uint64_t base = reinterpret_cast<uint64_t>(info.dli_fbase);
++            for (;;)
++            {
++                std::this_thread::sleep_for(std::chrono::seconds(15));
++                if (FILE *f = std::fopen(out.c_str(), "w"))
++                {
++                    for (size_t i = 0; i < kProfSlots; ++i)
++                        if (const uint32_t c = g_profCount[i].load(std::memory_order_relaxed))
++                            std::fprintf(f, "%u %llx\n", c, (unsigned long long)(g_profRip[i].load() - base));
++                    std::fclose(f);
++                }
++                // Shared-library samples resolve against <file>.maps (offsets are from the exe base).
++                if (FILE *f = std::fopen((out + ".maps").c_str(), "w"))
++                {
++                    std::fprintf(f, "base %llx\n", (unsigned long long)base);
++                    if (FILE *m = std::fopen("/proc/self/maps", "r"))
++                    {
++                        char line[512];
++                        while (std::fgets(line, sizeof(line), m))
++                            std::fputs(line, f);
++                        std::fclose(m);
++                    }
++                    std::fclose(f);
++                }
++            } })
++            .detach();
++        return true;
++    }();
++}
++
++void ps2ReportFloatEvent(const char *what, uint32_t pc, float a, float b, float result)
++{
++    static int reports = 0;
++    static uint32_t seenPcs[512];
++    static int nseen = 0;
++    for (int i = 0; i < nseen; ++i)
++        if (seenPcs[i] == pc)
++            return;
++    if (nseen < 512)
++        seenPcs[nseen++] = pc;
++    if (++reports > 300)
++        return;
++    uint32_t ab, bb, rb;
++    std::memcpy(&ab, &a, 4);
++    std::memcpy(&bb, &b, 4);
++    std::memcpy(&rb, &result, 4);
++    std::fprintf(stderr, "[float] %s pc=0x%x a=%08x(%g) b=%08x(%g) r=%08x\n", what, pc, ab, a, bb, b, rb);
++}
++
++void ps2ReportWatchedWrite(uint32_t guestAddr, uint32_t size, uint64_t valueLo, uint64_t valueHi, const char *op, const R5900Context *ctx)
++{
++    // With both PS2X_WATCH and PS2X_WATCH_VALUE set, report only stores that match both.
++    if (g_ps2WatchValueOn && g_ps2WatchLen != 0u)
++    {
++        const bool inRange = (((guestAddr & PS2_RAM_MASK) + size - 1u - g_ps2WatchLo) < g_ps2WatchLen + size - 1u);
++        const bool hasValue = size >= 4u && (static_cast<uint32_t>(valueLo) == g_ps2WatchValue || static_cast<uint32_t>(valueLo >> 32) == g_ps2WatchValue ||
++                                             static_cast<uint32_t>(valueHi) == g_ps2WatchValue || static_cast<uint32_t>(valueHi >> 32) == g_ps2WatchValue);
++        if (!inRange || !hasValue)
++            return;
++    }
++    // The alarm/kernel code that owns a watched structure is usually not interesting:
++    // PS2X_WATCH_IGNORE=<lo>-<hi> skips writes made from that pc range.
++    // Several ranges may be given: PS2X_WATCH_IGNORE=<lo>-<hi>,<lo>-<hi>.
++    static const std::vector<std::pair<uint32_t, uint32_t>> ignores = []()
++    {
++        std::vector<std::pair<uint32_t, uint32_t>> out;
++        for (const char *p = std::getenv("PS2X_WATCH_IGNORE"); p && *p;)
++        {
++            char *end = nullptr;
++            const uint32_t lo = static_cast<uint32_t>(std::strtoul(p, &end, 16));
++            const uint32_t hi = (end && *end == '-') ? static_cast<uint32_t>(std::strtoul(end + 1, &end, 16)) : lo;
++            out.emplace_back(lo, hi);
++            p = (end && *end == ',') ? end + 1 : nullptr;
++        }
++        return out;
++    }();
++    for (const auto &[lo, hi] : ignores)
++        if (ctx && ctx->pc >= lo && ctx->pc < hi)
++            return;
++    static int reports = 0;
++    if (++reports > 2000)
++        return;
++    std::fprintf(stderr, "[watch] %s addr=0x%x size=%u val=%016llx:%016llx pc=0x%x ra=0x%x\n", op ? op : "?", guestAddr, size,
++                 (unsigned long long)valueHi, (unsigned long long)valueLo, ctx ? ctx->pc : 0u,
++                 ctx ? static_cast<uint32_t>(_mm_cvtsi128_si32(ctx->r[31])) : 0u);
++    if (ctx && reports <= 40)
++    {
++        std::fprintf(stderr, "[watch]   regs:");
++        for (int r = 1; r < 32; ++r)
++            std::fprintf(stderr, " r%d=%x", r, static_cast<uint32_t>(_mm_cvtsi128_si32(ctx->r[r])));
++        std::fprintf(stderr, "\n");
++    }
++}
++
+ PS2Runtime::PS2Runtime()
+ {
+     m_iopHost = std::make_unique<PS2IopHostAdapter>(*this);
+@@ -1086,6 +1269,131 @@ namespace
+         slot = offset >> 2;
+         return slot < g_ps2RecompiledFunctionTableSlotCount;
+     }
++
++    // Sparse registry for recompiled functions outside the generated dense table
++    // (e.g. ERX/module code linked at fixed addresses beyond the main ELF).
++    // Registration is expected at startup; the shared mutex only guards concurrent
++    // mutation/lookup and is never taken on the dense-table fast path.
++    std::shared_mutex g_overflowFunctionsMutex;
++    std::unordered_map<uint32_t, PS2Runtime::RecompiledFunction> g_overflowFunctions;
++
++    // ERX import stub bindings: slot address -> resolved target guest address.
++    std::mutex g_erxImportMutex;
++    std::unordered_map<uint32_t, uint32_t> g_erxImportTargets;
++    std::unordered_set<uint32_t> g_erxImportReportedUnbound;
++}
++
++bool PS2Runtime::registerOverflowFunction(uint32_t address, RecompiledFunction func)
++{
++    if ((address & 3u) != 0u)
++    {
++        std::cerr << "[function-table] cannot register unaligned guest PC 0x" << std::hex << address
++                  << std::dec << std::endl;
++        return false;
++    }
++
++    std::unique_lock<std::shared_mutex> lock(g_overflowFunctionsMutex);
++    if (func == nullptr)
++    {
++        g_overflowFunctions.erase(address);
++        return true;
++    }
++
++    g_overflowFunctions[address] = func;
++    return true;
++}
++
++PS2Runtime::RecompiledFunction PS2Runtime::lookupOverflowFunction(uint32_t address)
++{
++    std::shared_lock<std::shared_mutex> lock(g_overflowFunctionsMutex);
++    const auto it = g_overflowFunctions.find(address);
++    return it != g_overflowFunctions.end() ? it->second : nullptr;
++}
++
++bool PS2Runtime::hasOverflowFunction(uint32_t address)
++{
++    return lookupOverflowFunction(address) != nullptr;
++}
++
++void PS2Runtime::clearOverflowFunctions()
++{
++    std::unique_lock<std::shared_mutex> lock(g_overflowFunctionsMutex);
++    g_overflowFunctions.clear();
++}
++
++void PS2Runtime::bindErxImport(uint32_t slotAddress, uint32_t targetAddress)
++{
++    std::lock_guard<std::mutex> lock(g_erxImportMutex);
++    g_erxImportTargets[slotAddress & ~3u] = targetAddress;
++}
++
++void PS2Runtime::unbindErxImport(uint32_t slotAddress)
++{
++    std::lock_guard<std::mutex> lock(g_erxImportMutex);
++    g_erxImportTargets.erase(slotAddress & ~3u);
++}
++
++bool PS2Runtime::isErxImportBound(uint32_t slotAddress)
++{
++    std::lock_guard<std::mutex> lock(g_erxImportMutex);
++    return g_erxImportTargets.find(slotAddress & ~3u) != g_erxImportTargets.end();
++}
++
++void PS2Runtime::clearErxImportBindings()
++{
++    std::lock_guard<std::mutex> lock(g_erxImportMutex);
++    g_erxImportTargets.clear();
++    g_erxImportReportedUnbound.clear();
++}
++
++bool PS2Runtime::callErxImport(uint8_t *rdram, R5900Context *ctx, uint32_t slotAddress)
++{
++    const uint32_t slot = slotAddress & ~3u;
++    uint32_t target = 0u;
++    bool firstUnboundReport = false;
++    {
++        std::lock_guard<std::mutex> lock(g_erxImportMutex);
++        const auto it = g_erxImportTargets.find(slot);
++        if (it != g_erxImportTargets.end())
++        {
++            target = it->second;
++        }
++        else
++        {
++            firstUnboundReport = g_erxImportReportedUnbound.insert(slot).second;
++        }
++    }
++
++    if (target == 0u)
++    {
++        if (firstUnboundReport)
++        {
++            std::cerr << "[erx-import] unbound import stub at PC 0x" << std::hex << slot
++                      << std::dec << ": taking the unlinked-call trap (missing bindErxImport)"
++                      << std::endl;
++        }
++
++        // The original slot is `break 0x0,0x1`; behave like the unlinked trap.
++        handleBreak(rdram, ctx);
++        return false;
++    }
++
++    ctx->pc = target;
++    RecompiledFunction fn = lookupFunction(target);
++    const uint32_t entryPc = ctx->pc;
++    const uint64_t yieldsBefore = m_eeYieldCount;
++    fn(rdram, ctx, this);
++
++    // The stub slot is a tail-call trampoline: if the target came back without
++    // transferring the PC (e.g. a C++ handler stub), return to the guest $ra.
++    // A generated function that yielded at a loop head on its entry also leaves
++    // the PC there; it must resume, not return.
++    if (ctx->pc == entryPc && m_eeYieldCount == yieldsBefore)
++    {
++        ctx->pc = getRegU32(ctx, 31);
++    }
++
++    return true;
+ }
+ 
+ bool PS2Runtime::replaceFunction(uint32_t address, RecompiledFunction func)
+@@ -1093,11 +1401,9 @@ bool PS2Runtime::replaceFunction(uint32_t address, RecompiledFunction func)
+     uint32_t slot = 0u;
+     if (!generatedFunctionTableSlot(address, slot))
+     {
+-        std::cerr << "[function-table] cannot replace guest PC 0x" << std::hex << address
+-                  << ": outside generated dense table [0x" << g_ps2RecompiledFunctionTableBase
+-                  << ", 0x" << g_ps2RecompiledFunctionTableEnd << ")"
+-                  << std::dec << std::endl;
+-        return false;
++        // Outside the generated dense table: keep it in the overflow registry so
++        // recompiled module code (ERX etc.) can be registered and dispatched.
++        return registerOverflowFunction(address, func);
+     }
+ 
+     g_ps2RecompiledFunctionTable[slot] = func;
+@@ -1112,7 +1418,12 @@ bool PS2Runtime::registerFunction(uint32_t address, RecompiledFunction func)
+ bool PS2Runtime::hasFunction(uint32_t address) const
+ {
+     uint32_t slot = 0u;
+-    return generatedFunctionTableSlot(address, slot) && g_ps2RecompiledFunctionTable[slot] != nullptr;
++    if (generatedFunctionTableSlot(address, slot) && g_ps2RecompiledFunctionTable[slot] != nullptr)
++    {
++        return true;
++    }
++
++    return hasOverflowFunction(address);
+ }
+ 
+ const char *describeGuestBranchKind(PS2Runtime::GuestBranchKind kind)
+@@ -1134,6 +1445,11 @@ const char *describeGuestBranchKind(PS2Runtime::GuestBranchKind kind)
+     }
+ }
+ 
++bool PS2Runtime::debugReadIopMemory(uint32_t address, void *destination, size_t size) const
++{
++    return m_iopSubsystem && m_iopSubsystem->readMemory(address, destination, size);
++}
++
+ PS2Runtime::RecompiledFunction PS2Runtime::lookupFunction(uint32_t address)
+ {
+     pushDispatchPc(address);
+@@ -1148,6 +1464,11 @@ PS2Runtime::RecompiledFunction PS2Runtime::lookupFunction(uint32_t address)
+         }
+     }
+ 
++    if (RecompiledFunction fn = lookupOverflowFunction(address))
++    {
++        return fn;
++    }
++
+     std::cerr << "Error: No exact recompiled function for guest PC 0x" << std::hex << address
+               << " tableBase=0x" << g_ps2RecompiledFunctionTableBase
+               << " tableEnd=0x" << g_ps2RecompiledFunctionTableEnd
+@@ -1184,6 +1505,29 @@ void PS2Runtime::resetMissingFunctionReportOnce()
+     m_missingFunctionReported.store(false, std::memory_order_release);
+ }
+ 
++// Last guest branch dispatches (calls/jumps between functions), dumped when a branch target is missing.
++namespace
++{
++    struct BranchRecord
++    {
++        uint32_t source, target, sp, ra;
++        uint8_t kind;
++    };
++    BranchRecord g_branchRing[64];
++    uint32_t g_branchRingPos = 0;
++    struct SchedRecord
++    {
++        uint32_t pc, sp, ra, thread, depth;
++    };
++    SchedRecord g_schedRing[32];
++    uint32_t g_schedRingPos = 0;
++}
++
++void ps2RecordSchedulerDispatch(uint32_t pc, uint32_t sp, uint32_t ra, uint32_t thread, uint32_t depth)
++{
++    g_schedRing[g_schedRingPos++ & 31u] = {pc, sp, ra, thread, depth};
++}
++
+ void PS2Runtime::reportMissingFunction(uint8_t *rdram,
+                                        R5900Context *ctx,
+                                        uint32_t targetPc,
+@@ -1191,6 +1535,28 @@ void PS2Runtime::reportMissingFunction(uint8_t *rdram,
+                                        GuestBranchKind kind,
+                                        const char *debugName)
+ {
++    {
++        static int dumps = 0;
++        if (dumps++ < 2)
++        {
++            std::fprintf(stderr, "[branch-ring] last guest dispatches (oldest first):\n");
++            for (uint32_t i = 0; i < 64u; ++i)
++            {
++                const BranchRecord &r = g_branchRing[(g_branchRingPos + i) & 63u];
++                if (r.source == 0u && r.target == 0u)
++                    continue;
++                std::fprintf(stderr, "  src=0x%x -> 0x%x kind=%u sp=0x%x ra=0x%x\n", r.source, r.target, r.kind, r.sp, r.ra);
++            }
++            std::fprintf(stderr, "[sched-ring] last top-level scheduler dispatches (oldest first):\n");
++            for (uint32_t i = 0; i < 32u; ++i)
++            {
++                const SchedRecord &r = g_schedRing[(g_schedRingPos + i) & 31u];
++                if (r.pc == 0u && r.sp == 0u)
++                    continue;
++                std::fprintf(stderr, "  pc=0x%x sp=0x%x ra=0x%x thread=%u depth=%u\n", r.pc, r.sp, r.ra, r.thread, r.depth);
++            }
++        }
++    }
+     const MissingFunctionPolicy policy = missingFunctionPolicy();
+     const bool firstReport = !m_missingFunctionReported.exchange(true, std::memory_order_acq_rel);
+ 
+@@ -1351,6 +1717,7 @@ bool PS2Runtime::dispatchGuestBranch(uint8_t *rdram,
+                                      const char *debugName)
+ {
+     ctx->pc = targetPc;
++    g_branchRing[g_branchRingPos++ & 63u] = {sourcePc, targetPc, getRegU32(ctx, 29), getRegU32(ctx, 31), static_cast<uint8_t>(kind)};
+     const bool isCall = (kind == GuestBranchKind::DirectCall || kind == GuestBranchKind::IndirectCall);
+ 
+     // Every inter-function transfer is also a deterministic EE safe point.
+@@ -1396,6 +1763,7 @@ bool PS2Runtime::dispatchGuestBranch(uint8_t *rdram,
+ 
+     RecompiledFunction targetFn = lookupFunction(targetPc);
+     const uint32_t entryPc = ctx->pc;
++    const uint64_t yieldsBefore = m_eeYieldCount;
+     targetFn(rdram, ctx, this);
+ 
+     if (isStopRequested() || ctx->pc == 0u)
+@@ -1403,7 +1771,10 @@ bool PS2Runtime::dispatchGuestBranch(uint8_t *rdram,
+         return false;
+     }
+ 
+-    if (ctx->pc == entryPc)
++    // An unchanged PC means a C++ stub returned. A generated function whose entry
++    // is a loop head also leaves the PC there when it yields at a checkpoint; that
++    // must unwind and resume the loop, not fall through (which skipped the wait).
++    if (ctx->pc == entryPc && m_eeYieldCount == yieldsBefore)
+     {
+         ctx->pc = fallthroughPc;
+     }
+@@ -2211,7 +2582,10 @@ void PS2Runtime::postEeEvent(EeEvent event)
+ 
+ bool PS2Runtime::eeCheckpointDue(uint32_t cycles) noexcept
+ {
+-    return m_eeScheduler->checkpointDue(cycles);
++    if (!m_eeScheduler->checkpointDue(cycles))
++        return false;
++    ++m_eeYieldCount;
++    return true;
+ }
+ 
+ [[noreturn]] void PS2Runtime::eeWaitVSyncTicks(uint32_t ticks, uint32_t resumePc)
+@@ -2430,9 +2804,12 @@ void PS2Runtime::run()
+         const float srcHeight = static_cast<float>(std::max<uint32_t>(1u, presentHeight));
+         const float screenWidth = static_cast<float>(GetScreenWidth());
+         const float screenHeight = static_cast<float>(GetScreenHeight());
+-        const float scale = std::min(screenWidth / srcWidth, screenHeight / srcHeight);
++        // A 224/256-line display (interlaced field rendering) covers the whole TV picture:
++        // show it at twice its height instead of letterboxing it.
++        const float aspectHeight = (presentHeight <= 256u && presentWidth >= 512u) ? srcHeight * 2.0f : srcHeight;
++        const float scale = std::min(screenWidth / srcWidth, screenHeight / aspectHeight);
+         const float dstWidth = srcWidth * scale;
+-        const float dstHeight = srcHeight * scale;
++        const float dstHeight = aspectHeight * scale;
+         const Rectangle srcRect{0.0f, 0.0f, srcWidth, srcHeight};
+         const Rectangle dstRect{
+             (screenWidth - dstWidth) * 0.5f,
+@@ -2446,6 +2823,81 @@ void PS2Runtime::run()
+         }
+         EndDrawing();
+ 
++        // PS2X_SHOT_DIR=<dir>: save this window's own framebuffer every PS2X_SHOT_EVERY frames (default 120).
++        {
++            static const char *shotDir = std::getenv("PS2X_SHOT_DIR");
++            static const long shotEvery = std::getenv("PS2X_SHOT_EVERY") ? std::max(1L, std::atol(std::getenv("PS2X_SHOT_EVERY"))) : 120L;
++            static uint64_t presentedFrames = 0;
++            if (shotDir != nullptr && presentedFrames == 0u)
++                gs().setDebugHistoryPaused(false);
++            ++presentedFrames;
++            if (shotDir != nullptr && (presentedFrames % static_cast<uint64_t>(shotEvery)) == 0u)
++            {
++                Image shot = LoadImageFromScreen();
++                const std::string path = std::string(shotDir) + "/frame_" + std::to_string(presentedFrames) + ".png";
++                ExportImage(shot, path.c_str());
++                UnloadImage(shot);
++                std::cerr << "[shot] " << path
++                          << " tick=" << eeScheduler().currentVSyncTick()
++                          << " dma=" << m_memory.dmaStartCount()
++                          << " gif=" << m_memory.gifCopyCount()
++                          << " gsw=" << m_memory.gsWriteCount()
++                          << " vif=" << m_memory.vifWriteCount() << std::hex
++                          << " pmode=0x" << m_memory.gs().pmode
++                          << " smode2=0x" << m_memory.gs().smode2
++                          << " dispfb1=0x" << m_memory.gs().dispfb1
++                          << " display1=0x" << m_memory.gs().display1
++                          << " dispfb2=0x" << m_memory.gs().dispfb2
++                          << " display2=0x" << m_memory.gs().display2 << std::dec << std::endl;
++#if defined(PS2X_FUNC_HISTOGRAM) && PS2X_FUNC_HISTOGRAM
++                {
++                    const std::string histPath = std::string(shotDir) + "/hist_" + std::to_string(presentedFrames) + ".txt";
++                    if (std::FILE *hist = std::fopen(histPath.c_str(), "w"))
++                    {
++                        ps2_hist::dumpAndReset(hist);
++                        std::fclose(hist);
++                    }
++                }
++#endif
++                const std::vector<GSDebugHistoryEntry> history = gs().getDebugHistory();
++                uint32_t kinds[5]{};
++                for (const GSDebugHistoryEntry &e : history)
++                    if (static_cast<uint32_t>(e.kind) < 5u)
++                        ++kinds[static_cast<uint32_t>(e.kind)];
++                std::cerr << "[shot:gs] history=" << history.size() << " giftag=" << kinds[0] << " reg=" << kinds[1]
++                          << " draw=" << kinds[2] << " xfer=" << kinds[3] << " present=" << kinds[4] << std::endl;
++                uint32_t shown = 0;
++                for (auto it = history.rbegin(); it != history.rend() && shown < 40u; ++it)
++                {
++                    if (it->kind == GSDebugEventKind::Draw)
++                    {
++                        ++shown;
++                        std::cerr << "[shot:gs]  draw frame=" << it->frameIndex << " prim=" << static_cast<uint32_t>(it->prim.type)
++                                  << " tme=" << static_cast<uint32_t>(it->prim.tme) << " verts=" << it->vertexCount
++                                  << " x=" << it->xMin << ".." << it->xMax << " y=" << it->yMin << ".." << it->yMax
++                                  << " a=" << static_cast<uint32_t>(it->aMin) << ".." << static_cast<uint32_t>(it->aMax)
++                                  << std::hex << " fbp=0x" << it->frame.fbp << " fbmsk=0x" << it->frame.fbmsk
++                                  << " tbp0=0x" << it->tex0.tbp0 << " tpsm=0x" << static_cast<uint32_t>(it->tex0.psm)
++                                  << " tbw=" << std::dec << static_cast<uint32_t>(it->tex0.tbw) << " tw=" << static_cast<uint32_t>(it->tex0.tw)
++                                  << " th=" << static_cast<uint32_t>(it->tex0.th) << " tfx=" << static_cast<uint32_t>(it->tex0.tfx)
++                                  << " tcc=" << static_cast<uint32_t>(it->tex0.tcc) << std::hex << " cbp=0x" << it->tex0.cbp
++                                  << " cpsm=0x" << static_cast<uint32_t>(it->tex0.cpsm) << " csa=" << std::dec << static_cast<uint32_t>(it->tex0.csa)
++                                  << " cld=" << static_cast<uint32_t>(it->tex0.cld) << " ctxt=" << it->prim.ctxt << " abe=" << it->prim.abe
++                                  << std::hex << " alpha=0x" << it->alpha << " test=0x" << it->test << std::dec << std::endl;
++                    }
++                    else if (it->kind == GSDebugEventKind::Transfer)
++                    {
++                        ++shown;
++                        std::cerr << "[shot:gs]  xfer frame=" << it->frameIndex << " pixels=" << it->transferPixels
++                                  << " dir=" << it->trxdir << std::hex << " sbp=0x" << it->bitbltbuf.sbp << " dbp=0x" << it->bitbltbuf.dbp
++                                  << " dbw=" << std::dec << static_cast<uint32_t>(it->bitbltbuf.dbw) << " dpsm=0x" << std::hex << static_cast<uint32_t>(it->bitbltbuf.dpsm)
++                                  << " w=" << std::dec << it->trxreg.rrw << " h=" << it->trxreg.rrh
++                                  << " dsa=" << it->trxpos.dsax << "," << it->trxpos.dsay << std::endl;
++                    }
++                }
++            }
++        }
++
+         if (WindowShouldClose())
+         {
+             RUNTIME_LOG("[run] window close requested, breaking out of loop");

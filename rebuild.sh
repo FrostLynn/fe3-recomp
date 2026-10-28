@@ -52,6 +52,10 @@ if [ "$need_erx" = 1 ]; then
     done
     python3 "$erx/step2/erx_post.py" --root "$root"
 fi
+# Generate ERX bindings if needed
+if [ ! -f "$erx/step2/out/erx_bindings.json" ]; then
+    python3 "$erx/step2/erx_bindings.py" --root "$root"
+fi
 # Step 3 metadata table for the game override (cheap; always regenerate).
 python3 "$erx/step3/erx_tables.py" --root "$root"
 # Wire everything into the runner (PS2X_ERX_SOURCE_DIR, see tools/PS2Recomp
@@ -66,4 +70,8 @@ cp "$erx/step3/out/erx_tables.cpp" "$tools/ps2xRuntime/src/runner/"
 # when the module sources appeared after the last configure; cache flags are kept.
 cmake -S "$tools" -B "$tools/build" > /dev/null
 # ------------------------------------------------------------------------------
-cmake --build "$tools/build" --target ps2EntryRunner -j"$(nproc)" 2>&1 | grep -E ' error|FAILED' || true
+NPROC=$(sysctl -n hw.ncpu 2>/dev/null || nproc)
+cmake --build "$tools/build" --target ps2EntryRunner -j"$NPROC" 2>&1 | grep -E ' error|FAILED' || true
+if [ "$(uname)" = "Darwin" ]; then
+    codesign --force --deep --sign - "$tools/build/ps2xRuntime/ps2EntryRunner" 2>/dev/null || true
+fi
