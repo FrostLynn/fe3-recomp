@@ -1,7 +1,15 @@
 # Project State
 
 ## Current Phase
-Phase 1 — Playable Fight Mode (Next)
+Phase 1 — Playable Fight Mode (IN PROGRESS)
+
+## Completed (Phase 1: Playable Fight Mode)
+- [x] Dumped 3 core VU1 microprograms at runtime (vu1_936c3474a1b2e98f, vu1_df1980cd2617d58b, vu1_e63b935fb674cad2)
+- [x] Translated VU1 microcode to native C++ via vu1aot.py (0 unsupported pairs, 1.9MB ufe3_vu1_aot.cpp)
+- [x] Integrated ufe3_vu1_aot.cpp into ps2EntryRunner build (86 MB binary)
+- [x] Enabled PS2X_VU1_AOT=1 by default in run.sh
+- [x] Verified full 3D Sato Gas (佐藤ガス) industrial refinery stage geometry and textures
+- [x] Refined auto-input sequence to cleanly transition from title through Story Mode briefing
 
 ## Completed (Phase 0: Foundation / macOS Port)
 - [x] Git repo initialized
