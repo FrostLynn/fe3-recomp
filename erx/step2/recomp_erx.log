@@ -1,0 +1,1711 @@
+[recompiler] parsing config
+[recompiler] parsing ELF
+[recompiler] extracted 21 functions, 21 symbols, 11 sections, 0 relocations
+[recompiler] recompiling 21 functions
+[recompiler] collected 11 resumable entry point(s) across 6 owner function(s)
+[recompiler] recompilation pass completed
+[recompiler] generated function header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_1/ps2_recompiled_functions.h"
+[recompiler] generating function output with 9 worker(s)
+[recompiler] wrote individual function files to /Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_1/
+[recompiler] generated function registration file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_1/register_functions.cpp"
+[recompiler] generated stub header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_1/ps2_recompiled_stubs.h"
+
+========== PS2Recomp report ==========
+Functions discovered: 21
+Symbols: 21, sections: 11, relocations: 0
+Functions processed: 21, recompiled: 21, stubs: 0, skipped: 0, decode failures: 0
+Additional entrypoints: 11
+Generated functions: 21
+Indirect fallback promotions: 0 (0 fallback entries)
+Unhandled instructions: 0
+Correctness-critical guest fallbacks: 0, failures: 0
+Warnings: 0, errors: 0
+
+Events:
+  [info] config - Parsing toml file: erx/step2/cfg/MISN_1.toml
+  [info] elf - ELF entry point: 0x0
+  [info] elf - BSS range: 0x1dcba78 - 0x1dcba84 (size 0xc), gp=0x0
+======================================
+Recompilation completed successfully
+[recompiler] parsing config
+[recompiler] parsing ELF
+[recompiler] extracted 37 functions, 37 symbols, 12 sections, 0 relocations
+[recompiler] recompiling 37 functions
+[recompiler] collected 35 resumable entry point(s) across 16 owner function(s)
+[recompiler] recompilation pass completed
+[recompiler] generated function header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_10/ps2_recompiled_functions.h"
+[recompiler] generating function output with 9 worker(s)
+[recompiler] wrote individual function files to /Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_10/
+[recompiler] generated function registration file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_10/register_functions.cpp"
+[recompiler] generated stub header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_10/ps2_recompiled_stubs.h"
+
+========== PS2Recomp report ==========
+Functions discovered: 37
+Symbols: 37, sections: 12, relocations: 0
+Functions processed: 37, recompiled: 37, stubs: 0, skipped: 0, decode failures: 0
+Additional entrypoints: 35
+Generated functions: 37
+Indirect fallback promotions: 0 (0 fallback entries)
+Unhandled instructions: 0
+Correctness-critical guest fallbacks: 0, failures: 0
+Warnings: 0, errors: 0
+
+Events:
+  [info] config - Parsing toml file: erx/step2/cfg/MISN_10.toml
+  [info] elf - ELF entry point: 0x0
+  [info] elf - BSS range: 0x1ddee5c - 0x1ddee70 (size 0x14), gp=0x0
+======================================
+Recompilation completed successfully
+[recompiler] parsing config
+[recompiler] parsing ELF
+[recompiler] extracted 22 functions, 22 symbols, 11 sections, 0 relocations
+[recompiler] recompiling 22 functions
+[recompiler] collected 15 resumable entry point(s) across 8 owner function(s)
+[recompiler] recompilation pass completed
+[recompiler] generated function header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_11/ps2_recompiled_functions.h"
+[recompiler] generating function output with 9 worker(s)
+[recompiler] wrote individual function files to /Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_11/
+[recompiler] generated function registration file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_11/register_functions.cpp"
+[recompiler] generated stub header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_11/ps2_recompiled_stubs.h"
+
+========== PS2Recomp report ==========
+Functions discovered: 22
+Symbols: 22, sections: 11, relocations: 0
+Functions processed: 22, recompiled: 22, stubs: 0, skipped: 0, decode failures: 0
+Additional entrypoints: 15
+Generated functions: 22
+Indirect fallback promotions: 0 (0 fallback entries)
+Unhandled instructions: 0
+Correctness-critical guest fallbacks: 0, failures: 0
+Warnings: 0, errors: 0
+
+Events:
+  [info] config - Parsing toml file: erx/step2/cfg/MISN_11.toml
+  [info] elf - ELF entry point: 0x0
+  [info] elf - BSS range: 0x1ddffd8 - 0x1ddffe4 (size 0xc), gp=0x0
+======================================
+Recompilation completed successfully
+[recompiler] parsing config
+[recompiler] parsing ELF
+[recompiler] extracted 10 functions, 10 symbols, 11 sections, 0 relocations
+[recompiler] recompiling 10 functions
+[recompiler] collected 3 resumable entry point(s) across 2 owner function(s)
+[recompiler] recompilation pass completed
+[recompiler] generated function header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_12/ps2_recompiled_functions.h"
+[recompiler] generating function output with 9 worker(s)
+[recompiler] wrote individual function files to /Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_12/
+[recompiler] generated function registration file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_12/register_functions.cpp"
+[recompiler] generated stub header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_12/ps2_recompiled_stubs.h"
+
+========== PS2Recomp report ==========
+Functions discovered: 10
+Symbols: 10, sections: 11, relocations: 0
+Functions processed: 10, recompiled: 10, stubs: 0, skipped: 0, decode failures: 0
+Additional entrypoints: 3
+Generated functions: 10
+Indirect fallback promotions: 0 (0 fallback entries)
+Unhandled instructions: 0
+Correctness-critical guest fallbacks: 0, failures: 0
+Warnings: 0, errors: 0
+
+Events:
+  [info] config - Parsing toml file: erx/step2/cfg/MISN_12.toml
+  [info] elf - ELF entry point: 0x0
+  [info] elf - BSS range: 0x1de0608 - 0x1de0614 (size 0xc), gp=0x0
+======================================
+Recompilation completed successfully
+[recompiler] parsing config
+[recompiler] parsing ELF
+[recompiler] extracted 21 functions, 21 symbols, 12 sections, 0 relocations
+[recompiler] recompiling 21 functions
+[recompiler] collected 14 resumable entry point(s) across 8 owner function(s)
+[recompiler] recompilation pass completed
+[recompiler] generated function header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_13/ps2_recompiled_functions.h"
+[recompiler] generating function output with 9 worker(s)
+[recompiler] wrote individual function files to /Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_13/
+[recompiler] generated function registration file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_13/register_functions.cpp"
+[recompiler] generated stub header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_13/ps2_recompiled_stubs.h"
+
+========== PS2Recomp report ==========
+Functions discovered: 21
+Symbols: 21, sections: 12, relocations: 0
+Functions processed: 21, recompiled: 21, stubs: 0, skipped: 0, decode failures: 0
+Additional entrypoints: 14
+Generated functions: 21
+Indirect fallback promotions: 0 (0 fallback entries)
+Unhandled instructions: 0
+Correctness-critical guest fallbacks: 0, failures: 0
+Warnings: 0, errors: 0
+
+Events:
+  [info] config - Parsing toml file: erx/step2/cfg/MISN_13.toml
+  [info] elf - ELF entry point: 0x0
+  [info] elf - BSS range: 0x1de1834 - 0x1de1840 (size 0xc), gp=0x0
+======================================
+Recompilation completed successfully
+[recompiler] parsing config
+[recompiler] parsing ELF
+[recompiler] extracted 32 functions, 32 symbols, 11 sections, 0 relocations
+[recompiler] recompiling 32 functions
+[recompiler] collected 31 resumable entry point(s) across 11 owner function(s)
+[recompiler] recompilation pass completed
+[recompiler] generated function header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_14/ps2_recompiled_functions.h"
+[recompiler] generating function output with 9 worker(s)
+[recompiler] wrote individual function files to /Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_14/
+[recompiler] generated function registration file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_14/register_functions.cpp"
+[recompiler] generated stub header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_14/ps2_recompiled_stubs.h"
+
+========== PS2Recomp report ==========
+Functions discovered: 32
+Symbols: 32, sections: 11, relocations: 0
+Functions processed: 32, recompiled: 32, stubs: 0, skipped: 0, decode failures: 0
+Additional entrypoints: 31
+Generated functions: 32
+Indirect fallback promotions: 0 (0 fallback entries)
+Unhandled instructions: 0
+Correctness-critical guest fallbacks: 0, failures: 0
+Warnings: 0, errors: 0
+
+Events:
+  [info] config - Parsing toml file: erx/step2/cfg/MISN_14.toml
+  [info] elf - ELF entry point: 0x0
+  [info] elf - BSS range: 0x1de36c8 - 0x1de36d4 (size 0xc), gp=0x0
+======================================
+Recompilation completed successfully
+[recompiler] parsing config
+[recompiler] parsing ELF
+[recompiler] extracted 29 functions, 29 symbols, 11 sections, 0 relocations
+[recompiler] recompiling 29 functions
+[recompiler] collected 33 resumable entry point(s) across 9 owner function(s)
+[recompiler] recompilation pass completed
+[recompiler] generated function header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_15/ps2_recompiled_functions.h"
+[recompiler] generating function output with 9 worker(s)
+[recompiler] wrote individual function files to /Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_15/
+[recompiler] generated function registration file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_15/register_functions.cpp"
+[recompiler] generated stub header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_15/ps2_recompiled_stubs.h"
+
+========== PS2Recomp report ==========
+Functions discovered: 29
+Symbols: 29, sections: 11, relocations: 0
+Functions processed: 29, recompiled: 29, stubs: 0, skipped: 0, decode failures: 0
+Additional entrypoints: 33
+Generated functions: 29
+Indirect fallback promotions: 0 (0 fallback entries)
+Unhandled instructions: 0
+Correctness-critical guest fallbacks: 0, failures: 0
+Warnings: 0, errors: 0
+
+Events:
+  [info] config - Parsing toml file: erx/step2/cfg/MISN_15.toml
+  [info] elf - ELF entry point: 0x0
+  [info] elf - BSS range: 0x1de4da0 - 0x1de4dac (size 0xc), gp=0x0
+======================================
+Recompilation completed successfully
+[recompiler] parsing config
+[recompiler] parsing ELF
+[recompiler] extracted 26 functions, 26 symbols, 11 sections, 0 relocations
+[recompiler] recompiling 26 functions
+[recompiler] collected 23 resumable entry point(s) across 9 owner function(s)
+[recompiler] recompilation pass completed
+[recompiler] generated function header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_16/ps2_recompiled_functions.h"
+[recompiler] generating function output with 9 worker(s)
+[recompiler] wrote individual function files to /Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_16/
+[recompiler] generated function registration file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_16/register_functions.cpp"
+[recompiler] generated stub header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_16/ps2_recompiled_stubs.h"
+
+========== PS2Recomp report ==========
+Functions discovered: 26
+Symbols: 26, sections: 11, relocations: 0
+Functions processed: 26, recompiled: 26, stubs: 0, skipped: 0, decode failures: 0
+Additional entrypoints: 23
+Generated functions: 26
+Indirect fallback promotions: 0 (0 fallback entries)
+Unhandled instructions: 0
+Correctness-critical guest fallbacks: 0, failures: 0
+Warnings: 0, errors: 0
+
+Events:
+  [info] config - Parsing toml file: erx/step2/cfg/MISN_16.toml
+  [info] elf - ELF entry point: 0x0
+  [info] elf - BSS range: 0x1de6688 - 0x1de6698 (size 0x10), gp=0x0
+======================================
+Recompilation completed successfully
+[recompiler] parsing config
+[recompiler] parsing ELF
+[recompiler] extracted 10 functions, 10 symbols, 11 sections, 0 relocations
+[recompiler] recompiling 10 functions
+[recompiler] collected 11 resumable entry point(s) across 3 owner function(s)
+[recompiler] recompilation pass completed
+[recompiler] generated function header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_17/ps2_recompiled_functions.h"
+[recompiler] generating function output with 9 worker(s)
+[recompiler] wrote individual function files to /Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_17/
+[recompiler] generated function registration file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_17/register_functions.cpp"
+[recompiler] generated stub header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_17/ps2_recompiled_stubs.h"
+
+========== PS2Recomp report ==========
+Functions discovered: 10
+Symbols: 10, sections: 11, relocations: 0
+Functions processed: 10, recompiled: 10, stubs: 0, skipped: 0, decode failures: 0
+Additional entrypoints: 11
+Generated functions: 10
+Indirect fallback promotions: 0 (0 fallback entries)
+Unhandled instructions: 0
+Correctness-critical guest fallbacks: 0, failures: 0
+Warnings: 0, errors: 0
+
+Events:
+  [info] config - Parsing toml file: erx/step2/cfg/MISN_17.toml
+  [info] elf - ELF entry point: 0x0
+  [info] elf - BSS range: 0x1de6d08 - 0x1de6d18 (size 0x10), gp=0x0
+======================================
+Recompilation completed successfully
+[recompiler] parsing config
+[recompiler] parsing ELF
+[recompiler] extracted 19 functions, 19 symbols, 11 sections, 0 relocations
+[recompiler] recompiling 19 functions
+[recompiler] collected 17 resumable entry point(s) across 6 owner function(s)
+[recompiler] recompilation pass completed
+[recompiler] generated function header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_18/ps2_recompiled_functions.h"
+[recompiler] generating function output with 9 worker(s)
+[recompiler] wrote individual function files to /Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_18/
+[recompiler] generated function registration file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_18/register_functions.cpp"
+[recompiler] generated stub header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_18/ps2_recompiled_stubs.h"
+
+========== PS2Recomp report ==========
+Functions discovered: 19
+Symbols: 19, sections: 11, relocations: 0
+Functions processed: 19, recompiled: 19, stubs: 0, skipped: 0, decode failures: 0
+Additional entrypoints: 17
+Generated functions: 19
+Indirect fallback promotions: 0 (0 fallback entries)
+Unhandled instructions: 0
+Correctness-critical guest fallbacks: 0, failures: 0
+Warnings: 0, errors: 0
+
+Events:
+  [info] config - Parsing toml file: erx/step2/cfg/MISN_18.toml
+  [info] elf - ELF entry point: 0x0
+  [info] elf - BSS range: 0x1de9f10 - 0x1de9f20 (size 0x10), gp=0x0
+======================================
+Recompilation completed successfully
+[recompiler] parsing config
+[recompiler] parsing ELF
+[recompiler] extracted 23 functions, 23 symbols, 12 sections, 0 relocations
+[recompiler] recompiling 23 functions
+[recompiler] collected 19 resumable entry point(s) across 7 owner function(s)
+[recompiler] recompilation pass completed
+[recompiler] generated function header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_19/ps2_recompiled_functions.h"
+[recompiler] generating function output with 9 worker(s)
+[recompiler] wrote individual function files to /Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_19/
+[recompiler] generated function registration file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_19/register_functions.cpp"
+[recompiler] generated stub header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_19/ps2_recompiled_stubs.h"
+
+========== PS2Recomp report ==========
+Functions discovered: 23
+Symbols: 23, sections: 12, relocations: 0
+Functions processed: 23, recompiled: 23, stubs: 0, skipped: 0, decode failures: 0
+Additional entrypoints: 19
+Generated functions: 23
+Indirect fallback promotions: 0 (0 fallback entries)
+Unhandled instructions: 0
+Correctness-critical guest fallbacks: 0, failures: 0
+Warnings: 0, errors: 0
+
+Events:
+  [info] config - Parsing toml file: erx/step2/cfg/MISN_19.toml
+  [info] elf - ELF entry point: 0x0
+  [info] elf - BSS range: 0x1deaea4 - 0x1deaeb0 (size 0xc), gp=0x0
+======================================
+Recompilation completed successfully
+[recompiler] parsing config
+[recompiler] parsing ELF
+[recompiler] extracted 30 functions, 30 symbols, 12 sections, 0 relocations
+[recompiler] recompiling 30 functions
+[recompiler] collected 45 resumable entry point(s) across 11 owner function(s)
+[recompiler] recompilation pass completed
+[recompiler] generated function header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_2/ps2_recompiled_functions.h"
+[recompiler] generating function output with 9 worker(s)
+[recompiler] wrote individual function files to /Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_2/
+[recompiler] generated function registration file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_2/register_functions.cpp"
+[recompiler] generated stub header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_2/ps2_recompiled_stubs.h"
+
+========== PS2Recomp report ==========
+Functions discovered: 30
+Symbols: 30, sections: 12, relocations: 0
+Functions processed: 30, recompiled: 30, stubs: 0, skipped: 0, decode failures: 0
+Additional entrypoints: 45
+Generated functions: 30
+Indirect fallback promotions: 0 (0 fallback entries)
+Unhandled instructions: 0
+Correctness-critical guest fallbacks: 0, failures: 0
+Warnings: 0, errors: 0
+
+Events:
+  [info] config - Parsing toml file: erx/step2/cfg/MISN_2.toml
+  [info] elf - ELF entry point: 0x0
+  [info] elf - BSS range: 0x1dcd788 - 0x1dcd798 (size 0x10), gp=0x0
+======================================
+Recompilation completed successfully
+[recompiler] parsing config
+[recompiler] parsing ELF
+[recompiler] extracted 25 functions, 25 symbols, 11 sections, 0 relocations
+[recompiler] recompiling 25 functions
+[recompiler] collected 23 resumable entry point(s) across 10 owner function(s)
+[recompiler] recompilation pass completed
+[recompiler] generated function header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_20/ps2_recompiled_functions.h"
+[recompiler] generating function output with 9 worker(s)
+[recompiler] wrote individual function files to /Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_20/
+[recompiler] generated function registration file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_20/register_functions.cpp"
+[recompiler] generated stub header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_20/ps2_recompiled_stubs.h"
+
+========== PS2Recomp report ==========
+Functions discovered: 25
+Symbols: 25, sections: 11, relocations: 0
+Functions processed: 25, recompiled: 25, stubs: 0, skipped: 0, decode failures: 0
+Additional entrypoints: 23
+Generated functions: 25
+Indirect fallback promotions: 0 (0 fallback entries)
+Unhandled instructions: 0
+Correctness-critical guest fallbacks: 0, failures: 0
+Warnings: 0, errors: 0
+
+Events:
+  [info] config - Parsing toml file: erx/step2/cfg/MISN_20.toml
+  [info] elf - ELF entry point: 0x0
+  [info] elf - BSS range: 0x1deca60 - 0x1deca6c (size 0xc), gp=0x0
+======================================
+Recompilation completed successfully
+[recompiler] parsing config
+[recompiler] parsing ELF
+[recompiler] extracted 27 functions, 27 symbols, 11 sections, 0 relocations
+[recompiler] recompiling 27 functions
+[recompiler] collected 43 resumable entry point(s) across 11 owner function(s)
+[recompiler] recompilation pass completed
+[recompiler] generated function header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_3/ps2_recompiled_functions.h"
+[recompiler] generating function output with 9 worker(s)
+[recompiler] wrote individual function files to /Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_3/
+[recompiler] generated function registration file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_3/register_functions.cpp"
+[recompiler] generated stub header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_3/ps2_recompiled_stubs.h"
+
+========== PS2Recomp report ==========
+Functions discovered: 27
+Symbols: 27, sections: 11, relocations: 0
+Functions processed: 27, recompiled: 27, stubs: 0, skipped: 0, decode failures: 0
+Additional entrypoints: 43
+Generated functions: 27
+Indirect fallback promotions: 0 (0 fallback entries)
+Unhandled instructions: 0
+Correctness-critical guest fallbacks: 0, failures: 0
+Warnings: 0, errors: 0
+
+Events:
+  [info] config - Parsing toml file: erx/step2/cfg/MISN_3.toml
+  [info] elf - ELF entry point: 0x0
+  [info] elf - BSS range: 0x1dcf2f0 - 0x1dcf304 (size 0x14), gp=0x0
+======================================
+Recompilation completed successfully
+[recompiler] parsing config
+[recompiler] parsing ELF
+[recompiler] extracted 25 functions, 25 symbols, 11 sections, 0 relocations
+[recompiler] recompiling 25 functions
+[recompiler] collected 18 resumable entry point(s) across 7 owner function(s)
+[recompiler] recompilation pass completed
+[recompiler] generated function header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_4/ps2_recompiled_functions.h"
+[recompiler] generating function output with 9 worker(s)
+[recompiler] wrote individual function files to /Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_4/
+[recompiler] generated function registration file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_4/register_functions.cpp"
+[recompiler] generated stub header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_4/ps2_recompiled_stubs.h"
+
+========== PS2Recomp report ==========
+Functions discovered: 25
+Symbols: 25, sections: 11, relocations: 0
+Functions processed: 25, recompiled: 25, stubs: 0, skipped: 0, decode failures: 0
+Additional entrypoints: 18
+Generated functions: 25
+Indirect fallback promotions: 0 (0 fallback entries)
+Unhandled instructions: 0
+Correctness-critical guest fallbacks: 0, failures: 0
+Warnings: 0, errors: 0
+
+Events:
+  [info] config - Parsing toml file: erx/step2/cfg/MISN_4.toml
+  [info] elf - ELF entry point: 0x0
+  [info] elf - BSS range: 0x1dd09a0 - 0x1dd09b0 (size 0x10), gp=0x0
+======================================
+Recompilation completed successfully
+[recompiler] parsing config
+[recompiler] parsing ELF
+[recompiler] extracted 33 functions, 33 symbols, 11 sections, 0 relocations
+[recompiler] recompiling 33 functions
+[recompiler] collected 24 resumable entry point(s) across 10 owner function(s)
+[recompiler] recompilation pass completed
+[recompiler] generated function header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_5/ps2_recompiled_functions.h"
+[recompiler] generating function output with 9 worker(s)
+[recompiler] wrote individual function files to /Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_5/
+[recompiler] generated function registration file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_5/register_functions.cpp"
+[recompiler] generated stub header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_5/ps2_recompiled_stubs.h"
+
+========== PS2Recomp report ==========
+Functions discovered: 33
+Symbols: 33, sections: 11, relocations: 0
+Functions processed: 33, recompiled: 33, stubs: 0, skipped: 0, decode failures: 0
+Additional entrypoints: 24
+Generated functions: 33
+Indirect fallback promotions: 0 (0 fallback entries)
+Unhandled instructions: 0
+Correctness-critical guest fallbacks: 0, failures: 0
+Warnings: 0, errors: 0
+
+Events:
+  [info] config - Parsing toml file: erx/step2/cfg/MISN_5.toml
+  [info] elf - ELF entry point: 0x0
+  [info] elf - BSS range: 0x1dd3cf0 - 0x1dd3d00 (size 0x10), gp=0x0
+======================================
+Recompilation completed successfully
+[recompiler] parsing config
+[recompiler] parsing ELF
+[recompiler] extracted 30 functions, 30 symbols, 11 sections, 0 relocations
+[recompiler] recompiling 30 functions
+[recompiler] collected 19 resumable entry point(s) across 9 owner function(s)
+[recompiler] recompilation pass completed
+[recompiler] generated function header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_6/ps2_recompiled_functions.h"
+[recompiler] generating function output with 9 worker(s)
+[recompiler] wrote individual function files to /Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_6/
+[recompiler] generated function registration file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_6/register_functions.cpp"
+[recompiler] generated stub header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_6/ps2_recompiled_stubs.h"
+
+========== PS2Recomp report ==========
+Functions discovered: 30
+Symbols: 30, sections: 11, relocations: 0
+Functions processed: 30, recompiled: 30, stubs: 0, skipped: 0, decode failures: 0
+Additional entrypoints: 19
+Generated functions: 30
+Indirect fallback promotions: 0 (0 fallback entries)
+Unhandled instructions: 0
+Correctness-critical guest fallbacks: 0, failures: 0
+Warnings: 0, errors: 0
+
+Events:
+  [info] config - Parsing toml file: erx/step2/cfg/MISN_6.toml
+  [info] elf - ELF entry point: 0x0
+  [info] elf - BSS range: 0x1dd5920 - 0x1dd592c (size 0xc), gp=0x0
+======================================
+Recompilation completed successfully
+[recompiler] parsing config
+[recompiler] parsing ELF
+[recompiler] extracted 20 functions, 20 symbols, 12 sections, 0 relocations
+[recompiler] recompiling 20 functions
+[recompiler] collected 11 resumable entry point(s) across 6 owner function(s)
+[recompiler] recompilation pass completed
+[recompiler] generated function header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_7/ps2_recompiled_functions.h"
+[recompiler] generating function output with 9 worker(s)
+[recompiler] wrote individual function files to /Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_7/
+[recompiler] generated function registration file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_7/register_functions.cpp"
+[recompiler] generated stub header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_7/ps2_recompiled_stubs.h"
+
+========== PS2Recomp report ==========
+Functions discovered: 20
+Symbols: 20, sections: 12, relocations: 0
+Functions processed: 20, recompiled: 20, stubs: 0, skipped: 0, decode failures: 0
+Additional entrypoints: 11
+Generated functions: 20
+Indirect fallback promotions: 0 (0 fallback entries)
+Unhandled instructions: 0
+Correctness-critical guest fallbacks: 0, failures: 0
+Warnings: 0, errors: 0
+
+Events:
+  [info] config - Parsing toml file: erx/step2/cfg/MISN_7.toml
+  [info] elf - ELF entry point: 0x0
+  [info] elf - BSS range: 0x1dd6bd4 - 0x1dd6be0 (size 0xc), gp=0x0
+======================================
+Recompilation completed successfully
+[recompiler] parsing config
+[recompiler] parsing ELF
+[recompiler] extracted 26 functions, 26 symbols, 12 sections, 0 relocations
+[recompiler] recompiling 26 functions
+[recompiler] collected 35 resumable entry point(s) across 9 owner function(s)
+[recompiler] recompilation pass completed
+[recompiler] generated function header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_8/ps2_recompiled_functions.h"
+[recompiler] generating function output with 9 worker(s)
+[recompiler] wrote individual function files to /Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_8/
+[recompiler] generated function registration file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_8/register_functions.cpp"
+[recompiler] generated stub header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_8/ps2_recompiled_stubs.h"
+
+========== PS2Recomp report ==========
+Functions discovered: 26
+Symbols: 26, sections: 12, relocations: 0
+Functions processed: 26, recompiled: 26, stubs: 0, skipped: 0, decode failures: 0
+Additional entrypoints: 35
+Generated functions: 26
+Indirect fallback promotions: 0 (0 fallback entries)
+Unhandled instructions: 0
+Correctness-critical guest fallbacks: 0, failures: 0
+Warnings: 0, errors: 0
+
+Events:
+  [info] config - Parsing toml file: erx/step2/cfg/MISN_8.toml
+  [info] elf - ELF entry point: 0x0
+  [info] elf - BSS range: 0x1dd81f0 - 0x1dd8230 (size 0x40), gp=0x0
+======================================
+Recompilation completed successfully
+[recompiler] parsing config
+[recompiler] parsing ELF
+[recompiler] extracted 25 functions, 25 symbols, 12 sections, 0 relocations
+[recompiler] recompiling 25 functions
+[recompiler] collected 24 resumable entry point(s) across 8 owner function(s)
+[recompiler] recompilation pass completed
+[recompiler] generated function header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_9/ps2_recompiled_functions.h"
+[recompiler] generating function output with 9 worker(s)
+[recompiler] wrote individual function files to /Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_9/
+[recompiler] generated function registration file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_9/register_functions.cpp"
+[recompiler] generated stub header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/MISN_9/ps2_recompiled_stubs.h"
+
+========== PS2Recomp report ==========
+Functions discovered: 25
+Symbols: 25, sections: 12, relocations: 0
+Functions processed: 25, recompiled: 25, stubs: 0, skipped: 0, decode failures: 0
+Additional entrypoints: 24
+Generated functions: 25
+Indirect fallback promotions: 0 (0 fallback entries)
+Unhandled instructions: 0
+Correctness-critical guest fallbacks: 0, failures: 0
+Warnings: 0, errors: 0
+
+Events:
+  [info] config - Parsing toml file: erx/step2/cfg/MISN_9.toml
+  [info] elf - ELF entry point: 0x0
+  [info] elf - BSS range: 0x1dd9578 - 0x1dd9584 (size 0xc), gp=0x0
+======================================
+Recompilation completed successfully
+[recompiler] parsing config
+[recompiler] parsing ELF
+[recompiler] extracted 457 functions, 457 symbols, 12 sections, 0 relocations
+[recompiler] recompiling 457 functions
+[recompiler] collected 128 resumable entry point(s) across 41 owner function(s)
+[recompiler] recompilation pass completed
+[recompiler] generated function header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_00/ps2_recompiled_functions.h"
+[recompiler] generating function output with 9 worker(s)
+[recompiler] wrote individual function files to /Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_00/
+[recompiler] generated function registration file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_00/register_functions.cpp"
+[recompiler] generated stub header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_00/ps2_recompiled_stubs.h"
+
+========== PS2Recomp report ==========
+Functions discovered: 457
+Symbols: 457, sections: 12, relocations: 0
+Functions processed: 457, recompiled: 457, stubs: 0, skipped: 0, decode failures: 0
+Additional entrypoints: 128
+Generated functions: 457
+Indirect fallback promotions: 0 (0 fallback entries)
+Unhandled instructions: 0
+Correctness-critical guest fallbacks: 0, failures: 0
+Warnings: 0, errors: 0
+
+Events:
+  [info] config - Parsing toml file: erx/step2/cfg/PL_00.toml
+  [info] elf - ELF entry point: 0x0
+  [info] elf - BSS range: 0x1c0f670 - 0x1c0f678 (size 0x8), gp=0x0
+======================================
+Recompilation completed successfully
+[recompiler] parsing config
+[recompiler] parsing ELF
+[recompiler] extracted 429 functions, 429 symbols, 12 sections, 0 relocations
+[recompiler] recompiling 429 functions
+[recompiler] collected 172 resumable entry point(s) across 36 owner function(s)
+[recompiler] recompilation pass completed
+[recompiler] generated function header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_01/ps2_recompiled_functions.h"
+[recompiler] generating function output with 9 worker(s)
+[recompiler] wrote individual function files to /Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_01/
+[recompiler] generated function registration file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_01/register_functions.cpp"
+[recompiler] generated stub header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_01/ps2_recompiled_stubs.h"
+
+========== PS2Recomp report ==========
+Functions discovered: 429
+Symbols: 429, sections: 12, relocations: 0
+Functions processed: 429, recompiled: 429, stubs: 0, skipped: 0, decode failures: 0
+Additional entrypoints: 172
+Generated functions: 429
+Indirect fallback promotions: 0 (0 fallback entries)
+Unhandled instructions: 0
+Correctness-critical guest fallbacks: 0, failures: 0
+Warnings: 0, errors: 0
+
+Events:
+  [info] config - Parsing toml file: erx/step2/cfg/PL_01.toml
+  [info] elf - ELF entry point: 0x0
+  [info] elf - BSS range: 0x1c1f0a0 - 0x1c1f0a8 (size 0x8), gp=0x0
+======================================
+Recompilation completed successfully
+[recompiler] parsing config
+[recompiler] parsing ELF
+[recompiler] extracted 439 functions, 439 symbols, 12 sections, 0 relocations
+[recompiler] recompiling 439 functions
+[recompiler] collected 267 resumable entry point(s) across 42 owner function(s)
+[recompiler] recompilation pass completed
+[recompiler] generated function header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_02/ps2_recompiled_functions.h"
+[recompiler] generating function output with 9 worker(s)
+[recompiler] wrote individual function files to /Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_02/
+[recompiler] generated function registration file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_02/register_functions.cpp"
+[recompiler] generated stub header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_02/ps2_recompiled_stubs.h"
+
+========== PS2Recomp report ==========
+Functions discovered: 439
+Symbols: 439, sections: 12, relocations: 0
+Functions processed: 439, recompiled: 439, stubs: 0, skipped: 0, decode failures: 0
+Additional entrypoints: 267
+Generated functions: 439
+Indirect fallback promotions: 0 (0 fallback entries)
+Unhandled instructions: 0
+Correctness-critical guest fallbacks: 0, failures: 0
+Warnings: 0, errors: 0
+
+Events:
+  [info] config - Parsing toml file: erx/step2/cfg/PL_02.toml
+  [info] elf - ELF entry point: 0x0
+  [info] elf - BSS range: 0x1c2f610 - 0x1c2f618 (size 0x8), gp=0x0
+======================================
+Recompilation completed successfully
+[recompiler] parsing config
+[recompiler] parsing ELF
+[recompiler] extracted 449 functions, 449 symbols, 12 sections, 0 relocations
+[recompiler] recompiling 449 functions
+[recompiler] collected 192 resumable entry point(s) across 43 owner function(s)
+[recompiler] recompilation pass completed
+[recompiler] generated function header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_03/ps2_recompiled_functions.h"
+[recompiler] generating function output with 9 worker(s)
+[recompiler] wrote individual function files to /Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_03/
+[recompiler] generated function registration file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_03/register_functions.cpp"
+[recompiler] generated stub header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_03/ps2_recompiled_stubs.h"
+
+========== PS2Recomp report ==========
+Functions discovered: 449
+Symbols: 449, sections: 12, relocations: 0
+Functions processed: 449, recompiled: 449, stubs: 0, skipped: 0, decode failures: 0
+Additional entrypoints: 192
+Generated functions: 449
+Indirect fallback promotions: 0 (0 fallback entries)
+Unhandled instructions: 0
+Correctness-critical guest fallbacks: 0, failures: 0
+Warnings: 0, errors: 0
+
+Events:
+  [info] config - Parsing toml file: erx/step2/cfg/PL_03.toml
+  [info] elf - ELF entry point: 0x0
+  [info] elf - BSS range: 0x1c42368 - 0x1c42374 (size 0xc), gp=0x0
+======================================
+Recompilation completed successfully
+[recompiler] parsing config
+[recompiler] parsing ELF
+[recompiler] extracted 441 functions, 441 symbols, 12 sections, 0 relocations
+[recompiler] recompiling 441 functions
+[recompiler] collected 180 resumable entry point(s) across 43 owner function(s)
+[recompiler] recompilation pass completed
+[recompiler] generated function header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_04/ps2_recompiled_functions.h"
+[recompiler] generating function output with 9 worker(s)
+[recompiler] wrote individual function files to /Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_04/
+[recompiler] generated function registration file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_04/register_functions.cpp"
+[recompiler] generated stub header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_04/ps2_recompiled_stubs.h"
+
+========== PS2Recomp report ==========
+Functions discovered: 441
+Symbols: 441, sections: 12, relocations: 0
+Functions processed: 441, recompiled: 441, stubs: 0, skipped: 0, decode failures: 0
+Additional entrypoints: 180
+Generated functions: 441
+Indirect fallback promotions: 0 (0 fallback entries)
+Unhandled instructions: 0
+Correctness-critical guest fallbacks: 0, failures: 0
+Warnings: 0, errors: 0
+
+Events:
+  [info] config - Parsing toml file: erx/step2/cfg/PL_04.toml
+  [info] elf - ELF entry point: 0x0
+  [info] elf - BSS range: 0x1c4f830 - 0x1c4f838 (size 0x8), gp=0x0
+======================================
+Recompilation completed successfully
+[recompiler] parsing config
+[recompiler] parsing ELF
+[recompiler] extracted 459 functions, 459 symbols, 12 sections, 0 relocations
+[recompiler] recompiling 459 functions
+[recompiler] collected 271 resumable entry point(s) across 58 owner function(s)
+[recompiler] recompilation pass completed
+[recompiler] generated function header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_05/ps2_recompiled_functions.h"
+[recompiler] generating function output with 9 worker(s)
+[recompiler] wrote individual function files to /Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_05/
+[recompiler] generated function registration file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_05/register_functions.cpp"
+[recompiler] generated stub header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_05/ps2_recompiled_stubs.h"
+
+========== PS2Recomp report ==========
+Functions discovered: 459
+Symbols: 459, sections: 12, relocations: 0
+Functions processed: 459, recompiled: 459, stubs: 0, skipped: 0, decode failures: 0
+Additional entrypoints: 271
+Generated functions: 459
+Indirect fallback promotions: 0 (0 fallback entries)
+Unhandled instructions: 0
+Correctness-critical guest fallbacks: 0, failures: 0
+Warnings: 0, errors: 0
+
+Events:
+  [info] config - Parsing toml file: erx/step2/cfg/PL_05.toml
+  [info] elf - ELF entry point: 0x0
+  [info] elf - BSS range: 0x1c5f4d0 - 0x1c5f4dc (size 0xc), gp=0x0
+======================================
+Recompilation completed successfully
+[recompiler] parsing config
+[recompiler] parsing ELF
+[recompiler] extracted 415 functions, 415 symbols, 12 sections, 0 relocations
+[recompiler] recompiling 415 functions
+[recompiler] collected 173 resumable entry point(s) across 37 owner function(s)
+[recompiler] recompilation pass completed
+[recompiler] generated function header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_06/ps2_recompiled_functions.h"
+[recompiler] generating function output with 9 worker(s)
+[recompiler] wrote individual function files to /Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_06/
+[recompiler] generated function registration file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_06/register_functions.cpp"
+[recompiler] generated stub header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_06/ps2_recompiled_stubs.h"
+
+========== PS2Recomp report ==========
+Functions discovered: 415
+Symbols: 415, sections: 12, relocations: 0
+Functions processed: 415, recompiled: 415, stubs: 0, skipped: 0, decode failures: 0
+Additional entrypoints: 173
+Generated functions: 415
+Indirect fallback promotions: 0 (0 fallback entries)
+Unhandled instructions: 0
+Correctness-critical guest fallbacks: 0, failures: 0
+Warnings: 0, errors: 0
+
+Events:
+  [info] config - Parsing toml file: erx/step2/cfg/PL_06.toml
+  [info] elf - ELF entry point: 0x0
+  [info] elf - BSS range: 0x1c69d18 - 0x1c69d20 (size 0x8), gp=0x0
+======================================
+Recompilation completed successfully
+[recompiler] parsing config
+[recompiler] parsing ELF
+[recompiler] extracted 417 functions, 417 symbols, 12 sections, 0 relocations
+[recompiler] recompiling 417 functions
+[recompiler] collected 174 resumable entry point(s) across 35 owner function(s)
+[recompiler] recompilation pass completed
+[recompiler] generated function header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_07/ps2_recompiled_functions.h"
+[recompiler] generating function output with 9 worker(s)
+[recompiler] wrote individual function files to /Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_07/
+[recompiler] generated function registration file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_07/register_functions.cpp"
+[recompiler] generated stub header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_07/ps2_recompiled_stubs.h"
+
+========== PS2Recomp report ==========
+Functions discovered: 417
+Symbols: 417, sections: 12, relocations: 0
+Functions processed: 417, recompiled: 417, stubs: 0, skipped: 0, decode failures: 0
+Additional entrypoints: 174
+Generated functions: 417
+Indirect fallback promotions: 0 (0 fallback entries)
+Unhandled instructions: 0
+Correctness-critical guest fallbacks: 0, failures: 0
+Warnings: 0, errors: 0
+
+Events:
+  [info] config - Parsing toml file: erx/step2/cfg/PL_07.toml
+  [info] elf - ELF entry point: 0x0
+  [info] elf - BSS range: 0x1c758a8 - 0x1c758b0 (size 0x8), gp=0x0
+======================================
+Recompilation completed successfully
+[recompiler] parsing config
+[recompiler] parsing ELF
+[recompiler] extracted 430 functions, 430 symbols, 12 sections, 0 relocations
+[recompiler] recompiling 430 functions
+[recompiler] collected 239 resumable entry point(s) across 49 owner function(s)
+[recompiler] recompilation pass completed
+[recompiler] generated function header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_08/ps2_recompiled_functions.h"
+[recompiler] generating function output with 9 worker(s)
+[recompiler] wrote individual function files to /Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_08/
+[recompiler] generated function registration file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_08/register_functions.cpp"
+[recompiler] generated stub header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_08/ps2_recompiled_stubs.h"
+
+========== PS2Recomp report ==========
+Functions discovered: 430
+Symbols: 430, sections: 12, relocations: 0
+Functions processed: 430, recompiled: 430, stubs: 0, skipped: 0, decode failures: 0
+Additional entrypoints: 239
+Generated functions: 430
+Indirect fallback promotions: 0 (0 fallback entries)
+Unhandled instructions: 0
+Correctness-critical guest fallbacks: 0, failures: 0
+Warnings: 0, errors: 0
+
+Events:
+  [info] config - Parsing toml file: erx/step2/cfg/PL_08.toml
+  [info] elf - ELF entry point: 0x0
+  [info] elf - BSS range: 0x1c80e28 - 0x1c80e30 (size 0x8), gp=0x0
+======================================
+Recompilation completed successfully
+[recompiler] parsing config
+[recompiler] parsing ELF
+[recompiler] extracted 411 functions, 411 symbols, 12 sections, 0 relocations
+[recompiler] recompiling 411 functions
+[recompiler] collected 220 resumable entry point(s) across 36 owner function(s)
+[recompiler] recompilation pass completed
+[recompiler] generated function header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_09/ps2_recompiled_functions.h"
+[recompiler] generating function output with 9 worker(s)
+[recompiler] wrote individual function files to /Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_09/
+[recompiler] generated function registration file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_09/register_functions.cpp"
+[recompiler] generated stub header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_09/ps2_recompiled_stubs.h"
+
+========== PS2Recomp report ==========
+Functions discovered: 411
+Symbols: 411, sections: 12, relocations: 0
+Functions processed: 411, recompiled: 411, stubs: 0, skipped: 0, decode failures: 0
+Additional entrypoints: 220
+Generated functions: 411
+Indirect fallback promotions: 0 (0 fallback entries)
+Unhandled instructions: 0
+Correctness-critical guest fallbacks: 0, failures: 0
+Warnings: 0, errors: 0
+
+Events:
+  [info] config - Parsing toml file: erx/step2/cfg/PL_09.toml
+  [info] elf - ELF entry point: 0x0
+  [info] elf - BSS range: 0x1c8cef8 - 0x1c8cf00 (size 0x8), gp=0x0
+======================================
+Recompilation completed successfully
+[recompiler] parsing config
+[recompiler] parsing ELF
+[recompiler] extracted 417 functions, 417 symbols, 12 sections, 0 relocations
+[recompiler] recompiling 417 functions
+[recompiler] collected 179 resumable entry point(s) across 39 owner function(s)
+[recompiler] recompilation pass completed
+[recompiler] generated function header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_10/ps2_recompiled_functions.h"
+[recompiler] generating function output with 9 worker(s)
+[recompiler] wrote individual function files to /Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_10/
+[recompiler] generated function registration file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_10/register_functions.cpp"
+[recompiler] generated stub header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_10/ps2_recompiled_stubs.h"
+
+========== PS2Recomp report ==========
+Functions discovered: 417
+Symbols: 417, sections: 12, relocations: 0
+Functions processed: 417, recompiled: 417, stubs: 0, skipped: 0, decode failures: 0
+Additional entrypoints: 179
+Generated functions: 417
+Indirect fallback promotions: 0 (0 fallback entries)
+Unhandled instructions: 0
+Correctness-critical guest fallbacks: 0, failures: 0
+Warnings: 0, errors: 0
+
+Events:
+  [info] config - Parsing toml file: erx/step2/cfg/PL_10.toml
+  [info] elf - ELF entry point: 0x0
+  [info] elf - BSS range: 0x1c98a00 - 0x1c98a08 (size 0x8), gp=0x0
+======================================
+Recompilation completed successfully
+[recompiler] parsing config
+[recompiler] parsing ELF
+[recompiler] extracted 425 functions, 425 symbols, 12 sections, 0 relocations
+[recompiler] recompiling 425 functions
+[recompiler] collected 215 resumable entry point(s) across 46 owner function(s)
+[recompiler] recompilation pass completed
+[recompiler] generated function header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_11/ps2_recompiled_functions.h"
+[recompiler] generating function output with 9 worker(s)
+[recompiler] wrote individual function files to /Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_11/
+[recompiler] generated function registration file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_11/register_functions.cpp"
+[recompiler] generated stub header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_11/ps2_recompiled_stubs.h"
+
+========== PS2Recomp report ==========
+Functions discovered: 425
+Symbols: 425, sections: 12, relocations: 0
+Functions processed: 425, recompiled: 425, stubs: 0, skipped: 0, decode failures: 0
+Additional entrypoints: 215
+Generated functions: 425
+Indirect fallback promotions: 0 (0 fallback entries)
+Unhandled instructions: 0
+Correctness-critical guest fallbacks: 0, failures: 0
+Warnings: 0, errors: 0
+
+Events:
+  [info] config - Parsing toml file: erx/step2/cfg/PL_11.toml
+  [info] elf - ELF entry point: 0x0
+  [info] elf - BSS range: 0x1ca26b0 - 0x1ca26b8 (size 0x8), gp=0x0
+======================================
+Recompilation completed successfully
+[recompiler] parsing config
+[recompiler] parsing ELF
+[recompiler] extracted 421 functions, 421 symbols, 12 sections, 0 relocations
+[recompiler] recompiling 421 functions
+[recompiler] collected 171 resumable entry point(s) across 38 owner function(s)
+[recompiler] recompilation pass completed
+[recompiler] generated function header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_12/ps2_recompiled_functions.h"
+[recompiler] generating function output with 9 worker(s)
+[recompiler] wrote individual function files to /Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_12/
+[recompiler] generated function registration file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_12/register_functions.cpp"
+[recompiler] generated stub header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_12/ps2_recompiled_stubs.h"
+
+========== PS2Recomp report ==========
+Functions discovered: 421
+Symbols: 421, sections: 12, relocations: 0
+Functions processed: 421, recompiled: 421, stubs: 0, skipped: 0, decode failures: 0
+Additional entrypoints: 171
+Generated functions: 421
+Indirect fallback promotions: 0 (0 fallback entries)
+Unhandled instructions: 0
+Correctness-critical guest fallbacks: 0, failures: 0
+Warnings: 0, errors: 0
+
+Events:
+  [info] config - Parsing toml file: erx/step2/cfg/PL_12.toml
+  [info] elf - ELF entry point: 0x0
+  [info] elf - BSS range: 0x1cad018 - 0x1cad020 (size 0x8), gp=0x0
+======================================
+Recompilation completed successfully
+[recompiler] parsing config
+[recompiler] parsing ELF
+[recompiler] extracted 388 functions, 388 symbols, 12 sections, 0 relocations
+[recompiler] recompiling 388 functions
+[recompiler] collected 154 resumable entry point(s) across 20 owner function(s)
+[recompiler] recompilation pass completed
+[recompiler] generated function header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_13/ps2_recompiled_functions.h"
+[recompiler] generating function output with 9 worker(s)
+[recompiler] wrote individual function files to /Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_13/
+[recompiler] generated function registration file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_13/register_functions.cpp"
+[recompiler] generated stub header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_13/ps2_recompiled_stubs.h"
+
+========== PS2Recomp report ==========
+Functions discovered: 388
+Symbols: 388, sections: 12, relocations: 0
+Functions processed: 388, recompiled: 388, stubs: 0, skipped: 0, decode failures: 0
+Additional entrypoints: 154
+Generated functions: 388
+Indirect fallback promotions: 0 (0 fallback entries)
+Unhandled instructions: 0
+Correctness-critical guest fallbacks: 0, failures: 0
+Warnings: 0, errors: 0
+
+Events:
+  [info] config - Parsing toml file: erx/step2/cfg/PL_13.toml
+  [info] elf - ELF entry point: 0x0
+  [info] elf - BSS range: 0x1cb66b0 - 0x1cb66b8 (size 0x8), gp=0x0
+======================================
+Recompilation completed successfully
+[recompiler] parsing config
+[recompiler] parsing ELF
+[recompiler] extracted 421 functions, 421 symbols, 12 sections, 0 relocations
+[recompiler] recompiling 421 functions
+[recompiler] collected 212 resumable entry point(s) across 43 owner function(s)
+[recompiler] recompilation pass completed
+[recompiler] generated function header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_14/ps2_recompiled_functions.h"
+[recompiler] generating function output with 9 worker(s)
+[recompiler] wrote individual function files to /Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_14/
+[recompiler] generated function registration file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_14/register_functions.cpp"
+[recompiler] generated stub header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_14/ps2_recompiled_stubs.h"
+
+========== PS2Recomp report ==========
+Functions discovered: 421
+Symbols: 421, sections: 12, relocations: 0
+Functions processed: 421, recompiled: 421, stubs: 0, skipped: 0, decode failures: 0
+Additional entrypoints: 212
+Generated functions: 421
+Indirect fallback promotions: 0 (0 fallback entries)
+Unhandled instructions: 0
+Correctness-critical guest fallbacks: 0, failures: 0
+Warnings: 0, errors: 0
+
+Events:
+  [info] config - Parsing toml file: erx/step2/cfg/PL_14.toml
+  [info] elf - ELF entry point: 0x0
+  [info] elf - BSS range: 0x1cc23d8 - 0x1cc23e0 (size 0x8), gp=0x0
+======================================
+Recompilation completed successfully
+[recompiler] parsing config
+[recompiler] parsing ELF
+[recompiler] extracted 418 functions, 418 symbols, 12 sections, 0 relocations
+[recompiler] recompiling 418 functions
+[recompiler] collected 174 resumable entry point(s) across 36 owner function(s)
+[recompiler] recompilation pass completed
+[recompiler] generated function header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_15/ps2_recompiled_functions.h"
+[recompiler] generating function output with 9 worker(s)
+[recompiler] wrote individual function files to /Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_15/
+[recompiler] generated function registration file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_15/register_functions.cpp"
+[recompiler] generated stub header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_15/ps2_recompiled_stubs.h"
+
+========== PS2Recomp report ==========
+Functions discovered: 418
+Symbols: 418, sections: 12, relocations: 0
+Functions processed: 418, recompiled: 418, stubs: 0, skipped: 0, decode failures: 0
+Additional entrypoints: 174
+Generated functions: 418
+Indirect fallback promotions: 0 (0 fallback entries)
+Unhandled instructions: 0
+Correctness-critical guest fallbacks: 0, failures: 0
+Warnings: 0, errors: 0
+
+Events:
+  [info] config - Parsing toml file: erx/step2/cfg/PL_15.toml
+  [info] elf - ELF entry point: 0x0
+  [info] elf - BSS range: 0x1ccd3f8 - 0x1ccd400 (size 0x8), gp=0x0
+======================================
+Recompilation completed successfully
+[recompiler] parsing config
+[recompiler] parsing ELF
+[recompiler] extracted 431 functions, 431 symbols, 12 sections, 0 relocations
+[recompiler] recompiling 431 functions
+[recompiler] collected 177 resumable entry point(s) across 39 owner function(s)
+[recompiler] recompilation pass completed
+[recompiler] generated function header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_16/ps2_recompiled_functions.h"
+[recompiler] generating function output with 9 worker(s)
+[recompiler] wrote individual function files to /Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_16/
+[recompiler] generated function registration file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_16/register_functions.cpp"
+[recompiler] generated stub header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_16/ps2_recompiled_stubs.h"
+
+========== PS2Recomp report ==========
+Functions discovered: 431
+Symbols: 431, sections: 12, relocations: 0
+Functions processed: 431, recompiled: 431, stubs: 0, skipped: 0, decode failures: 0
+Additional entrypoints: 177
+Generated functions: 431
+Indirect fallback promotions: 0 (0 fallback entries)
+Unhandled instructions: 0
+Correctness-critical guest fallbacks: 0, failures: 0
+Warnings: 0, errors: 0
+
+Events:
+  [info] config - Parsing toml file: erx/step2/cfg/PL_16.toml
+  [info] elf - ELF entry point: 0x0
+  [info] elf - BSS range: 0x1cda1a0 - 0x1cda1a8 (size 0x8), gp=0x0
+======================================
+Recompilation completed successfully
+[recompiler] parsing config
+[recompiler] parsing ELF
+[recompiler] extracted 454 functions, 454 symbols, 12 sections, 0 relocations
+[recompiler] recompiling 454 functions
+[recompiler] collected 246 resumable entry point(s) across 51 owner function(s)
+[recompiler] recompilation pass completed
+[recompiler] generated function header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_17/ps2_recompiled_functions.h"
+[recompiler] generating function output with 9 worker(s)
+[recompiler] wrote individual function files to /Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_17/
+[recompiler] generated function registration file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_17/register_functions.cpp"
+[recompiler] generated stub header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_17/ps2_recompiled_stubs.h"
+
+========== PS2Recomp report ==========
+Functions discovered: 454
+Symbols: 454, sections: 12, relocations: 0
+Functions processed: 454, recompiled: 454, stubs: 0, skipped: 0, decode failures: 0
+Additional entrypoints: 246
+Generated functions: 454
+Indirect fallback promotions: 0 (0 fallback entries)
+Unhandled instructions: 0
+Correctness-critical guest fallbacks: 0, failures: 0
+Warnings: 0, errors: 0
+
+Events:
+  [info] config - Parsing toml file: erx/step2/cfg/PL_17.toml
+  [info] elf - ELF entry point: 0x0
+  [info] elf - BSS range: 0x1cef440 - 0x1cef448 (size 0x8), gp=0x0
+======================================
+Recompilation completed successfully
+[recompiler] parsing config
+[recompiler] parsing ELF
+[recompiler] extracted 454 functions, 454 symbols, 12 sections, 0 relocations
+[recompiler] recompiling 454 functions
+[recompiler] collected 164 resumable entry point(s) across 49 owner function(s)
+[recompiler] recompilation pass completed
+[recompiler] generated function header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_18/ps2_recompiled_functions.h"
+[recompiler] generating function output with 9 worker(s)
+[recompiler] wrote individual function files to /Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_18/
+[recompiler] generated function registration file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_18/register_functions.cpp"
+[recompiler] generated stub header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_18/ps2_recompiled_stubs.h"
+
+========== PS2Recomp report ==========
+Functions discovered: 454
+Symbols: 454, sections: 12, relocations: 0
+Functions processed: 454, recompiled: 454, stubs: 0, skipped: 0, decode failures: 0
+Additional entrypoints: 164
+Generated functions: 454
+Indirect fallback promotions: 0 (0 fallback entries)
+Unhandled instructions: 0
+Correctness-critical guest fallbacks: 0, failures: 0
+Warnings: 0, errors: 0
+
+Events:
+  [info] config - Parsing toml file: erx/step2/cfg/PL_18.toml
+  [info] elf - ELF entry point: 0x0
+  [info] elf - BSS range: 0x1cfd130 - 0x1cfd138 (size 0x8), gp=0x0
+======================================
+Recompilation completed successfully
+[recompiler] parsing config
+[recompiler] parsing ELF
+[recompiler] extracted 462 functions, 462 symbols, 12 sections, 0 relocations
+[recompiler] recompiling 462 functions
+[recompiler] collected 204 resumable entry point(s) across 58 owner function(s)
+[recompiler] recompilation pass completed
+[recompiler] generated function header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_19/ps2_recompiled_functions.h"
+[recompiler] generating function output with 9 worker(s)
+[recompiler] wrote individual function files to /Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_19/
+[recompiler] generated function registration file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_19/register_functions.cpp"
+[recompiler] generated stub header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_19/ps2_recompiled_stubs.h"
+
+========== PS2Recomp report ==========
+Functions discovered: 462
+Symbols: 462, sections: 12, relocations: 0
+Functions processed: 462, recompiled: 462, stubs: 0, skipped: 0, decode failures: 0
+Additional entrypoints: 204
+Generated functions: 462
+Indirect fallback promotions: 0 (0 fallback entries)
+Unhandled instructions: 0
+Correctness-critical guest fallbacks: 0, failures: 0
+Warnings: 0, errors: 0
+
+Events:
+  [info] config - Parsing toml file: erx/step2/cfg/PL_19.toml
+  [info] elf - ELF entry point: 0x0
+  [info] elf - BSS range: 0x1d0bca8 - 0x1d0bcb4 (size 0xc), gp=0x0
+======================================
+Recompilation completed successfully
+[recompiler] parsing config
+[recompiler] parsing ELF
+[recompiler] extracted 438 functions, 438 symbols, 12 sections, 0 relocations
+[recompiler] recompiling 438 functions
+[recompiler] collected 214 resumable entry point(s) across 48 owner function(s)
+[recompiler] recompilation pass completed
+[recompiler] generated function header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_20/ps2_recompiled_functions.h"
+[recompiler] generating function output with 9 worker(s)
+[recompiler] wrote individual function files to /Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_20/
+[recompiler] generated function registration file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_20/register_functions.cpp"
+[recompiler] generated stub header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_20/ps2_recompiled_stubs.h"
+
+========== PS2Recomp report ==========
+Functions discovered: 438
+Symbols: 438, sections: 12, relocations: 0
+Functions processed: 438, recompiled: 438, stubs: 0, skipped: 0, decode failures: 0
+Additional entrypoints: 214
+Generated functions: 438
+Indirect fallback promotions: 0 (0 fallback entries)
+Unhandled instructions: 0
+Correctness-critical guest fallbacks: 0, failures: 0
+Warnings: 0, errors: 0
+
+Events:
+  [info] config - Parsing toml file: erx/step2/cfg/PL_20.toml
+  [info] elf - ELF entry point: 0x0
+  [info] elf - BSS range: 0x1d18fd0 - 0x1d18fe0 (size 0x10), gp=0x0
+======================================
+Recompilation completed successfully
+[recompiler] parsing config
+[recompiler] parsing ELF
+[recompiler] extracted 449 functions, 449 symbols, 12 sections, 0 relocations
+[recompiler] recompiling 449 functions
+[recompiler] collected 221 resumable entry point(s) across 44 owner function(s)
+[recompiler] recompilation pass completed
+[recompiler] generated function header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_21/ps2_recompiled_functions.h"
+[recompiler] generating function output with 9 worker(s)
+[recompiler] wrote individual function files to /Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_21/
+[recompiler] generated function registration file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_21/register_functions.cpp"
+[recompiler] generated stub header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_21/ps2_recompiled_stubs.h"
+
+========== PS2Recomp report ==========
+Functions discovered: 449
+Symbols: 449, sections: 12, relocations: 0
+Functions processed: 449, recompiled: 449, stubs: 0, skipped: 0, decode failures: 0
+Additional entrypoints: 221
+Generated functions: 449
+Indirect fallback promotions: 0 (0 fallback entries)
+Unhandled instructions: 0
+Correctness-critical guest fallbacks: 0, failures: 0
+Warnings: 0, errors: 0
+
+Events:
+  [info] config - Parsing toml file: erx/step2/cfg/PL_21.toml
+  [info] elf - ELF entry point: 0x0
+  [info] elf - BSS range: 0x1d26b38 - 0x1d26b40 (size 0x8), gp=0x0
+======================================
+Recompilation completed successfully
+[recompiler] parsing config
+[recompiler] parsing ELF
+[recompiler] extracted 430 functions, 430 symbols, 12 sections, 0 relocations
+[recompiler] recompiling 430 functions
+[recompiler] collected 218 resumable entry point(s) across 45 owner function(s)
+[recompiler] recompilation pass completed
+[recompiler] generated function header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_22/ps2_recompiled_functions.h"
+[recompiler] generating function output with 9 worker(s)
+[recompiler] wrote individual function files to /Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_22/
+[recompiler] generated function registration file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_22/register_functions.cpp"
+[recompiler] generated stub header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_22/ps2_recompiled_stubs.h"
+
+========== PS2Recomp report ==========
+Functions discovered: 430
+Symbols: 430, sections: 12, relocations: 0
+Functions processed: 430, recompiled: 430, stubs: 0, skipped: 0, decode failures: 0
+Additional entrypoints: 218
+Generated functions: 430
+Indirect fallback promotions: 0 (0 fallback entries)
+Unhandled instructions: 0
+Correctness-critical guest fallbacks: 0, failures: 0
+Warnings: 0, errors: 0
+
+Events:
+  [info] config - Parsing toml file: erx/step2/cfg/PL_22.toml
+  [info] elf - ELF entry point: 0x0
+  [info] elf - BSS range: 0x1d33408 - 0x1d33410 (size 0x8), gp=0x0
+======================================
+Recompilation completed successfully
+[recompiler] parsing config
+[recompiler] parsing ELF
+[recompiler] extracted 418 functions, 418 symbols, 12 sections, 0 relocations
+[recompiler] recompiling 418 functions
+[recompiler] collected 115 resumable entry point(s) across 33 owner function(s)
+[recompiler] recompilation pass completed
+[recompiler] generated function header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_23/ps2_recompiled_functions.h"
+[recompiler] generating function output with 9 worker(s)
+[recompiler] wrote individual function files to /Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_23/
+[recompiler] generated function registration file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_23/register_functions.cpp"
+[recompiler] generated stub header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_23/ps2_recompiled_stubs.h"
+
+========== PS2Recomp report ==========
+Functions discovered: 418
+Symbols: 418, sections: 12, relocations: 0
+Functions processed: 418, recompiled: 418, stubs: 0, skipped: 0, decode failures: 0
+Additional entrypoints: 115
+Generated functions: 418
+Indirect fallback promotions: 0 (0 fallback entries)
+Unhandled instructions: 0
+Correctness-critical guest fallbacks: 0, failures: 0
+Warnings: 0, errors: 0
+
+Events:
+  [info] config - Parsing toml file: erx/step2/cfg/PL_23.toml
+  [info] elf - ELF entry point: 0x0
+  [info] elf - BSS range: 0x1d3bb10 - 0x1d3bb18 (size 0x8), gp=0x0
+======================================
+Recompilation completed successfully
+[recompiler] parsing config
+[recompiler] parsing ELF
+[recompiler] extracted 414 functions, 414 symbols, 12 sections, 0 relocations
+[recompiler] recompiling 414 functions
+[recompiler] collected 178 resumable entry point(s) across 39 owner function(s)
+[recompiler] recompilation pass completed
+[recompiler] generated function header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_24/ps2_recompiled_functions.h"
+[recompiler] generating function output with 9 worker(s)
+[recompiler] wrote individual function files to /Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_24/
+[recompiler] generated function registration file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_24/register_functions.cpp"
+[recompiler] generated stub header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_24/ps2_recompiled_stubs.h"
+
+========== PS2Recomp report ==========
+Functions discovered: 414
+Symbols: 414, sections: 12, relocations: 0
+Functions processed: 414, recompiled: 414, stubs: 0, skipped: 0, decode failures: 0
+Additional entrypoints: 178
+Generated functions: 414
+Indirect fallback promotions: 0 (0 fallback entries)
+Unhandled instructions: 0
+Correctness-critical guest fallbacks: 0, failures: 0
+Warnings: 0, errors: 0
+
+Events:
+  [info] config - Parsing toml file: erx/step2/cfg/PL_24.toml
+  [info] elf - ELF entry point: 0x0
+  [info] elf - BSS range: 0x1d45c80 - 0x1d45c88 (size 0x8), gp=0x0
+======================================
+Recompilation completed successfully
+[recompiler] parsing config
+[recompiler] parsing ELF
+[recompiler] extracted 421 functions, 421 symbols, 12 sections, 0 relocations
+[recompiler] recompiling 421 functions
+[recompiler] collected 175 resumable entry point(s) across 36 owner function(s)
+[recompiler] recompilation pass completed
+[recompiler] generated function header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_25/ps2_recompiled_functions.h"
+[recompiler] generating function output with 9 worker(s)
+[recompiler] wrote individual function files to /Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_25/
+[recompiler] generated function registration file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_25/register_functions.cpp"
+[recompiler] generated stub header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_25/ps2_recompiled_stubs.h"
+
+========== PS2Recomp report ==========
+Functions discovered: 421
+Symbols: 421, sections: 12, relocations: 0
+Functions processed: 421, recompiled: 421, stubs: 0, skipped: 0, decode failures: 0
+Additional entrypoints: 175
+Generated functions: 421
+Indirect fallback promotions: 0 (0 fallback entries)
+Unhandled instructions: 0
+Correctness-critical guest fallbacks: 0, failures: 0
+Warnings: 0, errors: 0
+
+Events:
+  [info] config - Parsing toml file: erx/step2/cfg/PL_25.toml
+  [info] elf - ELF entry point: 0x0
+  [info] elf - BSS range: 0x1d50e68 - 0x1d50e70 (size 0x8), gp=0x0
+======================================
+Recompilation completed successfully
+[recompiler] parsing config
+[recompiler] parsing ELF
+[recompiler] extracted 424 functions, 424 symbols, 12 sections, 0 relocations
+[recompiler] recompiling 424 functions
+[recompiler] collected 206 resumable entry point(s) across 45 owner function(s)
+[recompiler] recompilation pass completed
+[recompiler] generated function header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_26/ps2_recompiled_functions.h"
+[recompiler] generating function output with 9 worker(s)
+[recompiler] wrote individual function files to /Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_26/
+[recompiler] generated function registration file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_26/register_functions.cpp"
+[recompiler] generated stub header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_26/ps2_recompiled_stubs.h"
+
+========== PS2Recomp report ==========
+Functions discovered: 424
+Symbols: 424, sections: 12, relocations: 0
+Functions processed: 424, recompiled: 424, stubs: 0, skipped: 0, decode failures: 0
+Additional entrypoints: 206
+Generated functions: 424
+Indirect fallback promotions: 0 (0 fallback entries)
+Unhandled instructions: 0
+Correctness-critical guest fallbacks: 0, failures: 0
+Warnings: 0, errors: 0
+
+Events:
+  [info] config - Parsing toml file: erx/step2/cfg/PL_26.toml
+  [info] elf - ELF entry point: 0x0
+  [info] elf - BSS range: 0x1d5cc38 - 0x1d5cc40 (size 0x8), gp=0x0
+======================================
+Recompilation completed successfully
+[recompiler] parsing config
+[recompiler] parsing ELF
+[recompiler] extracted 404 functions, 404 symbols, 12 sections, 0 relocations
+[recompiler] recompiling 404 functions
+[recompiler] collected 161 resumable entry point(s) across 33 owner function(s)
+[recompiler] recompilation pass completed
+[recompiler] generated function header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_27/ps2_recompiled_functions.h"
+[recompiler] generating function output with 9 worker(s)
+[recompiler] wrote individual function files to /Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_27/
+[recompiler] generated function registration file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_27/register_functions.cpp"
+[recompiler] generated stub header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_27/ps2_recompiled_stubs.h"
+
+========== PS2Recomp report ==========
+Functions discovered: 404
+Symbols: 404, sections: 12, relocations: 0
+Functions processed: 404, recompiled: 404, stubs: 0, skipped: 0, decode failures: 0
+Additional entrypoints: 161
+Generated functions: 404
+Indirect fallback promotions: 0 (0 fallback entries)
+Unhandled instructions: 0
+Correctness-critical guest fallbacks: 0, failures: 0
+Warnings: 0, errors: 0
+
+Events:
+  [info] config - Parsing toml file: erx/step2/cfg/PL_27.toml
+  [info] elf - ELF entry point: 0x0
+  [info] elf - BSS range: 0x1d666d8 - 0x1d666e0 (size 0x8), gp=0x0
+======================================
+Recompilation completed successfully
+[recompiler] parsing config
+[recompiler] parsing ELF
+[recompiler] extracted 393 functions, 393 symbols, 12 sections, 0 relocations
+[recompiler] recompiling 393 functions
+[recompiler] collected 127 resumable entry point(s) across 19 owner function(s)
+[recompiler] recompilation pass completed
+[recompiler] generated function header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_28/ps2_recompiled_functions.h"
+[recompiler] generating function output with 9 worker(s)
+[recompiler] wrote individual function files to /Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_28/
+[recompiler] generated function registration file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_28/register_functions.cpp"
+[recompiler] generated stub header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_28/ps2_recompiled_stubs.h"
+
+========== PS2Recomp report ==========
+Functions discovered: 393
+Symbols: 393, sections: 12, relocations: 0
+Functions processed: 393, recompiled: 393, stubs: 0, skipped: 0, decode failures: 0
+Additional entrypoints: 127
+Generated functions: 393
+Indirect fallback promotions: 0 (0 fallback entries)
+Unhandled instructions: 0
+Correctness-critical guest fallbacks: 0, failures: 0
+Warnings: 0, errors: 0
+
+Events:
+  [info] config - Parsing toml file: erx/step2/cfg/PL_28.toml
+  [info] elf - ELF entry point: 0x0
+  [info] elf - BSS range: 0x1d6ffb0 - 0x1d6ffb8 (size 0x8), gp=0x0
+======================================
+Recompilation completed successfully
+[recompiler] parsing config
+[recompiler] parsing ELF
+[recompiler] extracted 385 functions, 385 symbols, 12 sections, 0 relocations
+[recompiler] recompiling 385 functions
+[recompiler] collected 111 resumable entry point(s) across 16 owner function(s)
+[recompiler] recompilation pass completed
+[recompiler] generated function header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_29/ps2_recompiled_functions.h"
+[recompiler] generating function output with 9 worker(s)
+[recompiler] wrote individual function files to /Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_29/
+[recompiler] generated function registration file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_29/register_functions.cpp"
+[recompiler] generated stub header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_29/ps2_recompiled_stubs.h"
+
+========== PS2Recomp report ==========
+Functions discovered: 385
+Symbols: 385, sections: 12, relocations: 0
+Functions processed: 385, recompiled: 385, stubs: 0, skipped: 0, decode failures: 0
+Additional entrypoints: 111
+Generated functions: 385
+Indirect fallback promotions: 0 (0 fallback entries)
+Unhandled instructions: 0
+Correctness-critical guest fallbacks: 0, failures: 0
+Warnings: 0, errors: 0
+
+Events:
+  [info] config - Parsing toml file: erx/step2/cfg/PL_29.toml
+  [info] elf - ELF entry point: 0x0
+  [info] elf - BSS range: 0x1d77af8 - 0x1d77b00 (size 0x8), gp=0x0
+======================================
+Recompilation completed successfully
+[recompiler] parsing config
+[recompiler] parsing ELF
+[recompiler] extracted 251 functions, 251 symbols, 12 sections, 0 relocations
+[recompiler] recompiling 251 functions
+[recompiler] collected 59 resumable entry point(s) across 8 owner function(s)
+[recompiler] recompilation pass completed
+[recompiler] generated function header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_30/ps2_recompiled_functions.h"
+[recompiler] generating function output with 9 worker(s)
+[recompiler] wrote individual function files to /Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_30/
+[recompiler] generated function registration file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_30/register_functions.cpp"
+[recompiler] generated stub header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_30/ps2_recompiled_stubs.h"
+
+========== PS2Recomp report ==========
+Functions discovered: 251
+Symbols: 251, sections: 12, relocations: 0
+Functions processed: 251, recompiled: 251, stubs: 0, skipped: 0, decode failures: 0
+Additional entrypoints: 59
+Generated functions: 251
+Indirect fallback promotions: 0 (0 fallback entries)
+Unhandled instructions: 0
+Correctness-critical guest fallbacks: 0, failures: 0
+Warnings: 0, errors: 0
+
+Events:
+  [info] config - Parsing toml file: erx/step2/cfg/PL_30.toml
+  [info] elf - ELF entry point: 0x0
+  [info] elf - BSS range: 0x1d7d610 - 0x1d7d618 (size 0x8), gp=0x0
+======================================
+Recompilation completed successfully
+[recompiler] parsing config
+[recompiler] parsing ELF
+[recompiler] extracted 414 functions, 414 symbols, 12 sections, 0 relocations
+[recompiler] recompiling 414 functions
+[recompiler] collected 187 resumable entry point(s) across 38 owner function(s)
+[recompiler] recompilation pass completed
+[recompiler] generated function header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_31/ps2_recompiled_functions.h"
+[recompiler] generating function output with 9 worker(s)
+[recompiler] wrote individual function files to /Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_31/
+[recompiler] generated function registration file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_31/register_functions.cpp"
+[recompiler] generated stub header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_31/ps2_recompiled_stubs.h"
+
+========== PS2Recomp report ==========
+Functions discovered: 414
+Symbols: 414, sections: 12, relocations: 0
+Functions processed: 414, recompiled: 414, stubs: 0, skipped: 0, decode failures: 0
+Additional entrypoints: 187
+Generated functions: 414
+Indirect fallback promotions: 0 (0 fallback entries)
+Unhandled instructions: 0
+Correctness-critical guest fallbacks: 0, failures: 0
+Warnings: 0, errors: 0
+
+Events:
+  [info] config - Parsing toml file: erx/step2/cfg/PL_31.toml
+  [info] elf - ELF entry point: 0x0
+  [info] elf - BSS range: 0x1d88830 - 0x1d88838 (size 0x8), gp=0x0
+======================================
+Recompilation completed successfully
+[recompiler] parsing config
+[recompiler] parsing ELF
+[recompiler] extracted 417 functions, 417 symbols, 12 sections, 0 relocations
+[recompiler] recompiling 417 functions
+[recompiler] collected 156 resumable entry point(s) across 44 owner function(s)
+[recompiler] recompilation pass completed
+[recompiler] generated function header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_32/ps2_recompiled_functions.h"
+[recompiler] generating function output with 9 worker(s)
+[recompiler] wrote individual function files to /Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_32/
+[recompiler] generated function registration file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_32/register_functions.cpp"
+[recompiler] generated stub header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_32/ps2_recompiled_stubs.h"
+
+========== PS2Recomp report ==========
+Functions discovered: 417
+Symbols: 417, sections: 12, relocations: 0
+Functions processed: 417, recompiled: 417, stubs: 0, skipped: 0, decode failures: 0
+Additional entrypoints: 156
+Generated functions: 417
+Indirect fallback promotions: 0 (0 fallback entries)
+Unhandled instructions: 0
+Correctness-critical guest fallbacks: 0, failures: 0
+Warnings: 0, errors: 0
+
+Events:
+  [info] config - Parsing toml file: erx/step2/cfg/PL_32.toml
+  [info] elf - ELF entry point: 0x0
+  [info] elf - BSS range: 0x1d92740 - 0x1d92748 (size 0x8), gp=0x0
+======================================
+Recompilation completed successfully
+[recompiler] parsing config
+[recompiler] parsing ELF
+[recompiler] extracted 414 functions, 414 symbols, 12 sections, 0 relocations
+[recompiler] recompiling 414 functions
+[recompiler] collected 186 resumable entry point(s) across 40 owner function(s)
+[recompiler] recompilation pass completed
+[recompiler] generated function header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_33/ps2_recompiled_functions.h"
+[recompiler] generating function output with 9 worker(s)
+[recompiler] wrote individual function files to /Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_33/
+[recompiler] generated function registration file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_33/register_functions.cpp"
+[recompiler] generated stub header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_33/ps2_recompiled_stubs.h"
+
+========== PS2Recomp report ==========
+Functions discovered: 414
+Symbols: 414, sections: 12, relocations: 0
+Functions processed: 414, recompiled: 414, stubs: 0, skipped: 0, decode failures: 0
+Additional entrypoints: 186
+Generated functions: 414
+Indirect fallback promotions: 0 (0 fallback entries)
+Unhandled instructions: 0
+Correctness-critical guest fallbacks: 0, failures: 0
+Warnings: 0, errors: 0
+
+Events:
+  [info] config - Parsing toml file: erx/step2/cfg/PL_33.toml
+  [info] elf - ELF entry point: 0x0
+  [info] elf - BSS range: 0x1d9c8d8 - 0x1d9c8e0 (size 0x8), gp=0x0
+======================================
+Recompilation completed successfully
+[recompiler] parsing config
+[recompiler] parsing ELF
+[recompiler] extracted 411 functions, 411 symbols, 12 sections, 0 relocations
+[recompiler] recompiling 411 functions
+[recompiler] collected 172 resumable entry point(s) across 36 owner function(s)
+[recompiler] recompilation pass completed
+[recompiler] generated function header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_34/ps2_recompiled_functions.h"
+[recompiler] generating function output with 9 worker(s)
+[recompiler] wrote individual function files to /Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_34/
+[recompiler] generated function registration file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_34/register_functions.cpp"
+[recompiler] generated stub header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_34/ps2_recompiled_stubs.h"
+
+========== PS2Recomp report ==========
+Functions discovered: 411
+Symbols: 411, sections: 12, relocations: 0
+Functions processed: 411, recompiled: 411, stubs: 0, skipped: 0, decode failures: 0
+Additional entrypoints: 172
+Generated functions: 411
+Indirect fallback promotions: 0 (0 fallback entries)
+Unhandled instructions: 0
+Correctness-critical guest fallbacks: 0, failures: 0
+Warnings: 0, errors: 0
+
+Events:
+  [info] config - Parsing toml file: erx/step2/cfg/PL_34.toml
+  [info] elf - ELF entry point: 0x0
+  [info] elf - BSS range: 0x1da6d28 - 0x1da6d30 (size 0x8), gp=0x0
+======================================
+Recompilation completed successfully
+[recompiler] parsing config
+[recompiler] parsing ELF
+[recompiler] extracted 419 functions, 419 symbols, 12 sections, 0 relocations
+[recompiler] recompiling 419 functions
+[recompiler] collected 146 resumable entry point(s) across 39 owner function(s)
+[recompiler] recompilation pass completed
+[recompiler] generated function header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_35/ps2_recompiled_functions.h"
+[recompiler] generating function output with 9 worker(s)
+[recompiler] wrote individual function files to /Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_35/
+[recompiler] generated function registration file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_35/register_functions.cpp"
+[recompiler] generated stub header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_35/ps2_recompiled_stubs.h"
+
+========== PS2Recomp report ==========
+Functions discovered: 419
+Symbols: 419, sections: 12, relocations: 0
+Functions processed: 419, recompiled: 419, stubs: 0, skipped: 0, decode failures: 0
+Additional entrypoints: 146
+Generated functions: 419
+Indirect fallback promotions: 0 (0 fallback entries)
+Unhandled instructions: 0
+Correctness-critical guest fallbacks: 0, failures: 0
+Warnings: 0, errors: 0
+
+Events:
+  [info] config - Parsing toml file: erx/step2/cfg/PL_35.toml
+  [info] elf - ELF entry point: 0x0
+  [info] elf - BSS range: 0x1db0e90 - 0x1db0e98 (size 0x8), gp=0x0
+======================================
+Recompilation completed successfully
+[recompiler] parsing config
+[recompiler] parsing ELF
+[recompiler] extracted 412 functions, 412 symbols, 12 sections, 0 relocations
+[recompiler] recompiling 412 functions
+[recompiler] collected 178 resumable entry point(s) across 39 owner function(s)
+[recompiler] recompilation pass completed
+[recompiler] generated function header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_36/ps2_recompiled_functions.h"
+[recompiler] generating function output with 9 worker(s)
+[recompiler] wrote individual function files to /Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_36/
+[recompiler] generated function registration file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_36/register_functions.cpp"
+[recompiler] generated stub header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_36/ps2_recompiled_stubs.h"
+
+========== PS2Recomp report ==========
+Functions discovered: 412
+Symbols: 412, sections: 12, relocations: 0
+Functions processed: 412, recompiled: 412, stubs: 0, skipped: 0, decode failures: 0
+Additional entrypoints: 178
+Generated functions: 412
+Indirect fallback promotions: 0 (0 fallback entries)
+Unhandled instructions: 0
+Correctness-critical guest fallbacks: 0, failures: 0
+Warnings: 0, errors: 0
+
+Events:
+  [info] config - Parsing toml file: erx/step2/cfg/PL_36.toml
+  [info] elf - ELF entry point: 0x0
+  [info] elf - BSS range: 0x1dbb800 - 0x1dbb808 (size 0x8), gp=0x0
+======================================
+Recompilation completed successfully
+[recompiler] parsing config
+[recompiler] parsing ELF
+[recompiler] extracted 256 functions, 256 symbols, 13 sections, 0 relocations
+[recompiler] recompiling 256 functions
+[recompiler] collected 167 resumable entry point(s) across 49 owner function(s)
+[recompiler] recompilation pass completed
+[recompiler] generated function header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_37/ps2_recompiled_functions.h"
+[recompiler] generating function output with 9 worker(s)
+[recompiler] wrote individual function files to /Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_37/
+[recompiler] generated function registration file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_37/register_functions.cpp"
+[recompiler] generated stub header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_37/ps2_recompiled_stubs.h"
+
+========== PS2Recomp report ==========
+Functions discovered: 256
+Symbols: 256, sections: 13, relocations: 0
+Functions processed: 256, recompiled: 256, stubs: 0, skipped: 0, decode failures: 0
+Additional entrypoints: 167
+Generated functions: 256
+Indirect fallback promotions: 0 (0 fallback entries)
+Unhandled instructions: 0
+Correctness-critical guest fallbacks: 0, failures: 0
+Warnings: 0, errors: 0
+
+Events:
+  [info] config - Parsing toml file: erx/step2/cfg/PL_37.toml
+  [info] elf - ELF entry point: 0x0
+  [info] elf - BSS range: 0x1dc40f8 - 0x1dc41d0 (size 0xd8), gp=0x0
+======================================
+Recompilation completed successfully
+[recompiler] parsing config
+[recompiler] parsing ELF
+[recompiler] extracted 157 functions, 157 symbols, 12 sections, 0 relocations
+[recompiler] recompiling 157 functions
+[recompiler] collected 38 resumable entry point(s) across 15 owner function(s)
+[recompiler] recompilation pass completed
+[recompiler] generated function header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_38/ps2_recompiled_functions.h"
+[recompiler] generating function output with 9 worker(s)
+[recompiler] wrote individual function files to /Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_38/
+[recompiler] generated function registration file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_38/register_functions.cpp"
+[recompiler] generated stub header file: "/Users/akhdanrn/Projects/fe3-recomp/erx/step2/gen/PL_38/ps2_recompiled_stubs.h"
+
+========== PS2Recomp report ==========
+Functions discovered: 157
+Symbols: 157, sections: 12, relocations: 0
+Functions processed: 157, recompiled: 157, stubs: 0, skipped: 0, decode failures: 0
+Additional entrypoints: 38
+Generated functions: 157
+Indirect fallback promotions: 0 (0 fallback entries)
+Unhandled instructions: 0
+Correctness-critical guest fallbacks: 0, failures: 0
+Warnings: 0, errors: 0
+
+Events:
+  [info] config - Parsing toml file: erx/step2/cfg/PL_38.toml
+  [info] elf - ELF entry point: 0x0
+  [info] elf - BSS range: 0x1dca288 - 0x1dca294 (size 0xc), gp=0x0
+======================================
+Recompilation completed successfully

@@ -1,0 +1,31 @@
+# Game data (never commit proprietary assets)
+disc/
+game_data/
+*.iso
+*.ISO
+*.bin
+*.BIN
+*.img
+*.IMG
+
+# Build artifacts
+build/
+out/
+src/recompiled/
+tools/PS2Recomp/
+
+# Generated code
+erx/step3/out/
+
+# Upstream reference
+upstream-ref/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# macOS
+.DS_Store

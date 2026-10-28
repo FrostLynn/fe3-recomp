@@ -1,0 +1,30 @@
+#include <stdexcept>
+#include "ps2_runtime_macros.h"
+#include "ps2_runtime.h"
+#include <ps2_recompiled_functions.h>
+#include <ps2_recompiled_stubs.h>
+
+#include "ps2_syscalls.h"
+#include "ps2_stubs.h"
+
+#ifdef PS2_FUNCTION_LOG_TRACKER
+#include "ps2_log.h"
+#endif
+
+// Function: sub_01CADBA8
+// Address: 0x1cadba8 - 0x1cadbb0
+void sub_01CADBA8_0x1cadba8(uint8_t* rdram, R5900Context* ctx, PS2Runtime *runtime) {
+#ifdef PS2_FUNCTION_LOG_TRACKER
+    PS_LOG_ENTRY("sub_01CADBA8_0x1cadba8");
+#endif
+
+    ctx->pc = 0x1cadba8u;
+
+    // 0x1cadba8: 0x80b2a82  j           func_2CAA08
+    ctx->pc = 0x1CADBA8u;
+    ctx->pc = 0x2CAA08u;
+    if (!runtime->dispatchGuestBranch(rdram, ctx, 0x2CAA08u, 0x1CADBA8u, 0x0u, PS2Runtime::GuestBranchKind::DirectJump, "J")) {
+        return;
+    }
+    ctx->pc = 0x1CADBB0u;
+}

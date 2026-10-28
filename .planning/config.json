@@ -1,0 +1,10 @@
+{
+  "mode": "yolo",
+  "depth": "comprehensive",
+  "parallelization": true,
+  "notification": {
+    "channel": "telegram",
+    "chat_id": "972335645",
+    "bot": "@raphael2nd_bot"
+  }
+}
