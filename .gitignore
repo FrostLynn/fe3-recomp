@@ -7,10 +7,12 @@ game_data/
 *.BIN
 *.img
 *.IMG
+!vu1aot/images/*.bin
 
 # Build artifacts
 build/
 out/
+!vu1aot/out/
 src/recompiled/
 tools/PS2Recomp/
 

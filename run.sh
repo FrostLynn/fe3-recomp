@@ -2,6 +2,10 @@
 # Run the recompiled game from the extracted disc folder. Usage: run.sh [seconds] (0 = no timeout)
 root=$(cd "$(dirname "$0")" && pwd)
 cd "$root/disc"
+
+# Enable VU1 ahead-of-time microcode acceleration by default
+export PS2X_VU1_AOT=${PS2X_VU1_AOT:-1}
+
 t=${1:-0}
 if [ "$t" = 0 ]; then
     exec "${PS2X_RUNNER:-$root/tools/PS2Recomp/build/ps2xRuntime/ps2EntryRunner}" ./SLPS_254.41
